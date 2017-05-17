@@ -8,7 +8,13 @@
 
 import UIKit
 
-let BASE_API_URL = URL(string: "http://ayr.pf-n.co")!
+// http://stackoverflow.com/questions/24869481/detect-if-app-is-being-built-for-device-or-simulator-in-swift
+#if (arch(i386) || arch(x86_64)) && os(iOS)
+    let BASE_API_URL = URL(string: "http://localhost:3000")!
+#else
+    let BASE_API_URL = URL(string: "http://ayr.pf-n.co")!
+#endif
+
 let session = URLSession(configuration: URLSessionConfiguration.default)
 
 class AreYouReadyAPI {
