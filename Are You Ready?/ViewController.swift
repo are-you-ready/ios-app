@@ -20,6 +20,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func pressButton() {
+        AreYouReadyAPI.getProfile(name: "Markus") { (json, error) in
+            if let error = error {
+                print("There was an error: \(error)")
+            } else if let json = json {
+                let name = json["name"] as! String
+                let age = json["age"] as! Int
+                print("name: \(name)")
+                print("age: \(age)")
+            }
+        }
+    }
 
 }
 
