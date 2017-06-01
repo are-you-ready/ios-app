@@ -13,6 +13,7 @@
 		AF34FFF11ECCC43400029391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF34FFF01ECCC43400029391 /* Assets.xcassets */; };
 		AF34FFF41ECCC43400029391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF34FFF21ECCC43400029391 /* LaunchScreen.storyboard */; };
 		AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */; };
+		AF9C72301ECE1A800059CEB0 /* AYRUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C722F1ECE1A800059CEB0 /* AYRUserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AF34FFF31ECCC43400029391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF34FFF51ECCC43400029391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreYouReadyAPI.swift; sourceTree = "<group>"; };
+		AF9C722F1ECE1A800059CEB0 /* AYRUserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AYRUserProfile.swift; path = "Are You Ready?/AYRUserProfile.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		AF34FFE81ECCC43400029391 /* Are You Ready? */ = {
 			isa = PBXGroup;
 			children = (
+				AF9C722E1ECE1A210059CEB0 /* structures */,
 				AF34FFE91ECCC43400029391 /* AppDelegate.swift */,
 				AF34FFEB1ECCC43400029391 /* ViewController.swift */,
 				AF34FFED1ECCC43400029391 /* Main.storyboard */,
@@ -65,6 +68,15 @@
 				AF34FFF51ECCC43400029391 /* Info.plist */,
 			);
 			path = "Are You Ready?";
+			sourceTree = "<group>";
+		};
+		AF9C722E1ECE1A210059CEB0 /* structures */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C722F1ECE1A800059CEB0 /* AYRUserProfile.swift */,
+			);
+			name = structures;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +155,7 @@
 				AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */,
 				AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */,
 				AF34FFEA1ECCC43400029391 /* AppDelegate.swift in Sources */,
+				AF9C72301ECE1A800059CEB0 /* AYRUserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +321,7 @@
 				AF34FFFA1ECCC43400029391 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
