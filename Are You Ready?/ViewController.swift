@@ -21,13 +21,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func pressButton() {
-        AreYouReadyAPI.getProfile(name: "Markus") { (result) in
+        AreYouReadyAPI.getGroup(name: "cis55") { (result) in
             switch (result) {
-            case let .success(profile):
-                print(profile.name)
-                print(profile.age)
-            case let .failure(.requestFailure(reason)),
-                 let .failure(.JSONParseFailure(reason)):
+            case let .success(user):
+                print(user.name)
+                print(user.users)
+            case let .failure(.requestFailure(reason, _)),
+                 let .failure(.JSONParseFailure(reason)),
+                 let .failure(.JSONErrorResponse(reason, _)):
                 print("Request failed because \(reason)")
             }
         }
