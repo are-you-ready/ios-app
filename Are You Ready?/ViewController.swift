@@ -21,19 +21,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func pressButton() {
-        AreYouReadyAPI.getProfile(name: "Markus") { (json, error) in
-            if let error = error {
-                print("There was an error: \(error)")
-            } else if let json = json {
-                let name = json["name"] as! String
-                let age = json["age"] as! Int
-                print("name: \(name)")
-                print("age: \(age)")
-                // made a change
-                // made a second change
+        AreYouReadyAPI.getProfile(name: "Markus") { (result) in
+            switch (result) {
+            case let .success(profile):
+                print(profile.name)
+                print(profile.age)
+            case let .failure(.requestFailure(reason)),
+                 let .failure(.JSONParseFailure(reason)):
+                print("Request failed because \(reason)")
             }
         }
     }
 
 }
-
