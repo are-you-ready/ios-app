@@ -10,12 +10,29 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var LoginField: UITextField!
+    @IBOutlet weak var EnterButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func buttonPushed(_ sender: Any) {
+        //if there is something in the edit field, use it
+        if (LoginField.text?.characters.count)! > 0 {
+            //write to core data
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                let newLoginObject = Login(context: appDelegate.persistentContainer.viewContext)
+                
+                newLoginObject.id = LoginField.text!
+                appDelegate.saveContext()
+            }
+
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
