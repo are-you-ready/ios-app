@@ -15,7 +15,8 @@
 		AF34FFF11ECCC43400029391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF34FFF01ECCC43400029391 /* Assets.xcassets */; };
 		AF34FFF41ECCC43400029391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF34FFF21ECCC43400029391 /* LaunchScreen.storyboard */; };
 		AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */; };
-		AF9C72301ECE1A800059CEB0 /* AYRUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C722F1ECE1A800059CEB0 /* AYRUserProfile.swift */; };
+		AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589B1EE610EC00EB4919 /* AYRUser.swift */; };
+		AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589D1EE6116200EB4919 /* AYRGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		AF34FFF31ECCC43400029391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF34FFF51ECCC43400029391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreYouReadyAPI.swift; sourceTree = "<group>"; };
-		AF9C722F1ECE1A800059CEB0 /* AYRUserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AYRUserProfile.swift; path = "Are You Ready?/AYRUserProfile.swift"; sourceTree = "<group>"; };
+		AF3A589B1EE610EC00EB4919 /* AYRUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRUser.swift; sourceTree = "<group>"; };
+		AF3A589D1EE6116200EB4919 /* AYRGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,8 @@
 		AF9C722E1ECE1A210059CEB0 /* structures */ = {
 			isa = PBXGroup;
 			children = (
-				AF9C722F1ECE1A800059CEB0 /* AYRUserProfile.swift */,
+				AF3A589B1EE610EC00EB4919 /* AYRUser.swift */,
+				AF3A589D1EE6116200EB4919 /* AYRGroup.swift */,
 			);
 			name = structures;
 			path = ..;
@@ -163,7 +166,8 @@
 				AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */,
 				AF34FFEA1ECCC43400029391 /* AppDelegate.swift in Sources */,
 				4FE11FAC1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld in Sources */,
-				AF9C72301ECE1A800059CEB0 /* AYRUserProfile.swift in Sources */,
+				AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */,
+				AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
