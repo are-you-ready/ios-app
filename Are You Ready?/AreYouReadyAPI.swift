@@ -24,7 +24,7 @@ enum APIResult<Type> {
 
 // Change this URL to change where API requests are sent. Change it to "http://localhost:3000" to use your local server, but localhost will not work if your build target is an iOS device (not an iOS Simulator). In that case, use the internal IP address (eg. "http://192.168.1.62:3000"). Please do not commit this line as anything other than "http://ayr.pf-n.co".
 // TODO: Determine API URL based on build settings. (development vs production)
-let BASE_API_URL = URL(string: "http://localhost:3000")!
+let BASE_API_URL = URL(string: "http://ayr.pf-n.co")!
 
 let session = URLSession.shared
 
@@ -72,6 +72,7 @@ class AreYouReadyAPI {
         case let .success(user):
             print(user.name)
             print(user.groups)
+            // let cis55: AYRGroup = user.groups["cis55"]
         case let .failure(.requestFailure(reason, _)),
              let .failure(.JSONParseFailure(reason)),
              let .failure(.JSONErrorResponse(reason, _)):
@@ -86,7 +87,7 @@ class AreYouReadyAPI {
      */
     static func getUser(name: String, completionHandler: @escaping (APIResult<AYRUser>) -> Void) {
         let name = name.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-        jsonGet("/user/\(name)") { (json, error) in
+        jsonGet("/api/user/\(name)") { (json, error) in
             if let error = error {
                 completionHandler(.failure(error))
                 return
@@ -103,13 +104,29 @@ class AreYouReadyAPI {
     /**
      Gets the group.
      
+     ```swift
+     AreYouReadyAPI.getGroup(name: "cis55") { (result) in
+         switch (result) {
+         case let .success(group):
+             print(group.name)
+             print(group.users)
+             // let markus: AYRPartialUser = group.users["Markus"]
+             // Make a secondary fetch to fully resolve an AYRPartialUser
+         case let .failure(.requestFailure(reason, _)),
+              let .failure(.JSONParseFailure(reason)),
+              let .failure(.JSONErrorResponse(reason, _)):
+             print("Request failed because \(reason)")
+         }
+     }
+     ```
+     
      - Parameters:
      - name: The *name* of the group to query.
      - completionHandler: The completion handler to call when the request is complete. The completion handler takes a single parameter `result`.
      */
     static func getGroup(name: String, completionHandler: @escaping (APIResult<AYRGroup>) -> Void) {
         let name = name.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-        jsonGet("/group/\(name)") { (json, error) in
+        jsonGet("/api/group/\(name)") { (json, error) in
             if let error = error {
                 completionHandler(.failure(error))
                 return
