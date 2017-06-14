@@ -111,7 +111,7 @@
 				TargetAttributes = {
 					AF34FFE51ECCC43400029391 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = SU257R86UN;
+						DevelopmentTeam = 2NKLZJVG9L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -280,8 +280,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SU257R86UN;
+				DEVELOPMENT_TEAM = 2NKLZJVG9L;
 				INFOPLIST_FILE = "Are You Ready?/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ayr.Are-You-Ready-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -293,8 +294,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SU257R86UN;
+				DEVELOPMENT_TEAM = 2NKLZJVG9L;
 				INFOPLIST_FILE = "Are You Ready?/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ayr.Are-You-Ready-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
