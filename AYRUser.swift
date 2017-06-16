@@ -6,50 +6,26 @@
 //  Copyright © 2017 Markus Tran. All rights reserved.
 //
 
-class AYRPartialUser {
+import Foundation
+
+class AYRUser {
     let name: String
+    let _active: Bool // This property is NOT used
     
-    init(name: String) {
+    init(name: String, _active: Bool = true) {
         self.name = name
+        self._active = _active
     }
     
     init?(fromJSON json: Any?) {
         guard let json = json as? [String: Any],
-              let name = json["name"] as? String
+              let jsonName = json["name"] as? String,
+              let jsonActive = json["active"] as? Bool
         else {
             return nil
         }
         
-        self.name = name
-    }
-}
-
-class AYRUser: AYRPartialUser {
-    let groups: [String: AYRGroup]
-    
-    init(name: String, groups: [String: AYRGroup]) {
-        self.groups = groups
-        super.init(name: name)
-    }
-    
-    override init?(fromJSON json: Any?) {
-        guard let json = json as? [String: Any],
-              let name = json["name"] as? String,
-              let groups = json["groups"] as? [Any]
-        else {
-            return nil
-        }
-        
-        var parsedGroups = [String: AYRGroup]()
-        for group in groups {
-            if let parsedGroup = AYRGroup(fromJSON: group) {
-                parsedGroups[parsedGroup.name] = parsedGroup
-            } else {
-                return nil
-            }
-        }
-        
-        self.groups = parsedGroups
-        super.init(name: name)
+        self.name = jsonName
+        self._active = jsonActive
     }
 }
