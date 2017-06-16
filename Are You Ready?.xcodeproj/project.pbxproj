@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		4FE11FA91EF1DACF005060E2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FA81EF1DACF005060E2 /* LoginViewController.swift */; };
 		4FE11FAC1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FAA1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld */; };
+		4FE11FAE1EF1ED65005060E2 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FAD1EF1ED65005060E2 /* GroupTableViewController.swift */; };
+		4FE11FB21EF2062E005060E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FB11EF2062E005060E2 /* MainViewController.swift */; };
+		4FE11FB41EF2F9AB005060E2 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FB31EF2F9AB005060E2 /* AddEventTableViewController.swift */; };
+		4FE11FB61EF2FF63005060E2 /* Cell1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FB51EF2FF63005060E2 /* Cell1TableViewCell.swift */; };
+		4FE11FBA1EF34766005060E2 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FB91EF34766005060E2 /* RadioButton.swift */; };
+		4FE11FBC1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FBB1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift */; };
+		4FE11FBE1EF379D9005060E2 /* MeetSpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FBD1EF379D9005060E2 /* MeetSpotTableViewCell.swift */; };
 		AF34FFEA1ECCC43400029391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34FFE91ECCC43400029391 /* AppDelegate.swift */; };
 		AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34FFEB1ECCC43400029391 /* ViewController.swift */; };
 		AF34FFEF1ECCC43400029391 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF34FFED1ECCC43400029391 /* Main.storyboard */; };
@@ -22,6 +29,13 @@
 /* Begin PBXFileReference section */
 		4FE11FA81EF1DACF005060E2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FE11FAB1EF1DD96005060E2 /* Are You Ready?.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Are You Ready?.xcdatamodel"; sourceTree = "<group>"; };
+		4FE11FAD1EF1ED65005060E2 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		4FE11FB11EF2062E005060E2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4FE11FB31EF2F9AB005060E2 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
+		4FE11FB51EF2FF63005060E2 /* Cell1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell1TableViewCell.swift; sourceTree = "<group>"; };
+		4FE11FB91EF34766005060E2 /* RadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		4FE11FBB1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetUpTypeTableViewCell.swift; sourceTree = "<group>"; };
+		4FE11FBD1EF379D9005060E2 /* MeetSpotTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetSpotTableViewCell.swift; sourceTree = "<group>"; };
 		AF34FFE61ECCC43400029391 /* Are You Ready?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Are You Ready?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF34FFE91ECCC43400029391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF34FFEB1ECCC43400029391 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +83,13 @@
 				AF34FFE91ECCC43400029391 /* AppDelegate.swift */,
 				AF34FFEB1ECCC43400029391 /* ViewController.swift */,
 				AF34FFED1ECCC43400029391 /* Main.storyboard */,
+				4FE11FB51EF2FF63005060E2 /* Cell1TableViewCell.swift */,
+				4FE11FBB1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift */,
+				4FE11FBD1EF379D9005060E2 /* MeetSpotTableViewCell.swift */,
+				4FE11FB31EF2F9AB005060E2 /* AddEventTableViewController.swift */,
+				4FE11FB91EF34766005060E2 /* RadioButton.swift */,
+				4FE11FB11EF2062E005060E2 /* MainViewController.swift */,
+				4FE11FAD1EF1ED65005060E2 /* GroupTableViewController.swift */,
 				4FE11FA81EF1DACF005060E2 /* LoginViewController.swift */,
 				AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */,
 				AF34FFF01ECCC43400029391 /* Assets.xcassets */,
@@ -161,11 +182,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FE11FB61EF2FF63005060E2 /* Cell1TableViewCell.swift in Sources */,
+				4FE11FBC1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift in Sources */,
+				4FE11FB41EF2F9AB005060E2 /* AddEventTableViewController.swift in Sources */,
 				4FE11FA91EF1DACF005060E2 /* LoginViewController.swift in Sources */,
 				AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */,
 				AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */,
+				4FE11FBE1EF379D9005060E2 /* MeetSpotTableViewCell.swift in Sources */,
 				AF34FFEA1ECCC43400029391 /* AppDelegate.swift in Sources */,
+				4FE11FBA1EF34766005060E2 /* RadioButton.swift in Sources */,
 				4FE11FAC1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld in Sources */,
+				4FE11FAE1EF1ED65005060E2 /* GroupTableViewController.swift in Sources */,
+				4FE11FB21EF2062E005060E2 /* MainViewController.swift in Sources */,
 				AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */,
 				AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */,
 			);
