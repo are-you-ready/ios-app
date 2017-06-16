@@ -17,7 +17,6 @@ class ShowGroupTableViewController: UITableViewController {
             switch (result) {
             case let .success(group):
                 self.groupMemberNames = Array(group.users.keys)
-                print(self.groupMemberNames)
                 self.tableView.reloadData()
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
@@ -40,7 +39,6 @@ class ShowGroupTableViewController: UITableViewController {
         
         self.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: UIControlEvents.valueChanged)
         handleRefresh()
-//        self.refreshControl?.addTarget(self, action: #selector(ViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
     }
 
     override func didReceiveMemoryWarning() {
