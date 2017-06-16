@@ -23,7 +23,7 @@ enum APIResult<Type> {
 }
 
 // Change this URL to change where API requests are sent. Change it to "http://localhost:3000" to use your local server, but localhost will not work if your build target is an iOS device (not an iOS Simulator). In that case, use the internal IP address (eg. "http://192.168.1.62:3000"). Please do not commit this line as anything other than "http://ayr.pf-n.co".
-let BASE_API_URL = URL(string: "http://ayr.pf-n.co")!
+let BASE_API_URL = URL(string: "http://localhost:3000")!
 
 let session = URLSession.shared
 

@@ -19,6 +19,8 @@
 		AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589D1EE6116200EB4919 /* AYRGroup.swift */; };
 		AF61D4771EF228E100063168 /* AYREvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D4761EF228E100063168 /* AYREvent.swift */; };
 		AF61D4791EF32D4B00063168 /* AYRJsonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D4781EF32D4B00063168 /* AYRJsonError.swift */; };
+		AF61D47B1EF36F5100063168 /* ShowGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D47A1EF36F5100063168 /* ShowGroupTableViewCell.swift */; };
+		AF61D47D1EF372EE00063168 /* ShowGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D47C1EF372EE00063168 /* ShowGroupTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		AF3A589D1EE6116200EB4919 /* AYRGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRGroup.swift; sourceTree = "<group>"; };
 		AF61D4761EF228E100063168 /* AYREvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYREvent.swift; sourceTree = "<group>"; };
 		AF61D4781EF32D4B00063168 /* AYRJsonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRJsonError.swift; sourceTree = "<group>"; };
+		AF61D47A1EF36F5100063168 /* ShowGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowGroupTableViewCell.swift; sourceTree = "<group>"; };
+		AF61D47C1EF372EE00063168 /* ShowGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowGroupTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				AF34FFF01ECCC43400029391 /* Assets.xcassets */,
 				AF34FFF21ECCC43400029391 /* LaunchScreen.storyboard */,
 				AF34FFF51ECCC43400029391 /* Info.plist */,
+				AF61D47C1EF372EE00063168 /* ShowGroupTableViewController.swift */,
+				AF61D47A1EF36F5100063168 /* ShowGroupTableViewCell.swift */,
 			);
 			path = "Are You Ready?";
 			sourceTree = "<group>";
@@ -173,7 +179,9 @@
 				AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */,
 				AF34FFEA1ECCC43400029391 /* AppDelegate.swift in Sources */,
 				4FE11FAC1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld in Sources */,
+				AF61D47B1EF36F5100063168 /* ShowGroupTableViewCell.swift in Sources */,
 				AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */,
+				AF61D47D1EF372EE00063168 /* ShowGroupTableViewController.swift in Sources */,
 				AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */,
 				AF61D4771EF228E100063168 /* AYREvent.swift in Sources */,
 			);
