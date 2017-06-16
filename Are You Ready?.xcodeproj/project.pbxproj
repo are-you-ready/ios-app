@@ -24,6 +24,8 @@
 		AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */; };
 		AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589B1EE610EC00EB4919 /* AYRUser.swift */; };
 		AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589D1EE6116200EB4919 /* AYRGroup.swift */; };
+		AF61D4771EF228E100063168 /* AYREvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D4761EF228E100063168 /* AYREvent.swift */; };
+		AF61D4791EF32D4B00063168 /* AYRJsonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D4781EF32D4B00063168 /* AYRJsonError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreYouReadyAPI.swift; sourceTree = "<group>"; };
 		AF3A589B1EE610EC00EB4919 /* AYRUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRUser.swift; sourceTree = "<group>"; };
 		AF3A589D1EE6116200EB4919 /* AYRGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRGroup.swift; sourceTree = "<group>"; };
+		AF61D4761EF228E100063168 /* AYREvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYREvent.swift; sourceTree = "<group>"; };
+		AF61D4781EF32D4B00063168 /* AYRJsonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRJsonError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +106,10 @@
 		AF9C722E1ECE1A210059CEB0 /* structures */ = {
 			isa = PBXGroup;
 			children = (
-				AF3A589B1EE610EC00EB4919 /* AYRUser.swift */,
 				AF3A589D1EE6116200EB4919 /* AYRGroup.swift */,
+				AF3A589B1EE610EC00EB4919 /* AYRUser.swift */,
+				AF61D4761EF228E100063168 /* AYREvent.swift */,
+				AF61D4781EF32D4B00063168 /* AYRJsonError.swift */,
 			);
 			name = structures;
 			path = ..;
@@ -141,7 +147,7 @@
 				TargetAttributes = {
 					AF34FFE51ECCC43400029391 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = SU257R86UN;
+						DevelopmentTeam = 2NKLZJVG9L;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -185,6 +191,7 @@
 				4FE11FB61EF2FF63005060E2 /* Cell1TableViewCell.swift in Sources */,
 				4FE11FBC1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift in Sources */,
 				4FE11FB41EF2F9AB005060E2 /* AddEventTableViewController.swift in Sources */,
+				AF61D4791EF32D4B00063168 /* AYRJsonError.swift in Sources */,
 				4FE11FA91EF1DACF005060E2 /* LoginViewController.swift in Sources */,
 				AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */,
 				AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */,
@@ -196,6 +203,7 @@
 				4FE11FB21EF2062E005060E2 /* MainViewController.swift in Sources */,
 				AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */,
 				AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */,
+				AF61D4771EF228E100063168 /* AYREvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,8 +328,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SU257R86UN;
+				DEVELOPMENT_TEAM = 2NKLZJVG9L;
 				INFOPLIST_FILE = "Are You Ready?/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ayr.Are-You-Ready-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -333,8 +342,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SU257R86UN;
+				DEVELOPMENT_TEAM = 2NKLZJVG9L;
 				INFOPLIST_FILE = "Are You Ready?/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ayr.Are-You-Ready-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
