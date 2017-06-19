@@ -127,6 +127,7 @@ public class RadioButton: UIButton {
         super.layoutSubviews()
         setCircleLayouts()
     }
+    
     override public var isSelected: Bool {
         didSet {
             setFillState()

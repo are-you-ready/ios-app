@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        /*
         AreYouReadyAPI.getUser(name: "Markus") { (result) in
             switch (result) {
             case let .success(user):
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
                 print("Request failed because \(reason)")
             }
         }
+        */
     }
 
     override func didReceiveMemoryWarning() {

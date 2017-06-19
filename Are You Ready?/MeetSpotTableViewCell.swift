@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol MeetSpotCellDelegate {
+    func meetSpotButtonTapped(index:Int)
+}
+
 class MeetSpotTableViewCell: UITableViewCell {
     @IBOutlet weak var carButton: RadioButton!
     @IBOutlet weak var frontDoorButton: RadioButton!
     @IBOutlet weak var kitchenButton: RadioButton!
     @IBOutlet weak var livingRoomButton: RadioButton!
 
+    var delegate: MeetSpotCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,27 +32,42 @@ class MeetSpotTableViewCell: UITableViewCell {
     }
     
     @IBAction func carPushed(_ sender: RadioButton) {
-        frontDoorButton.isSelected = false
-        kitchenButton.isSelected = false
-        livingRoomButton.isSelected = false
         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            delegate?.meetSpotButtonTapped(index: 0)
+            frontDoorButton.isSelected = false
+            kitchenButton.isSelected = false
+            livingRoomButton.isSelected = false
+        }
     }
+    
     @IBAction func frontDoorPushed(_ sender: RadioButton) {
-        carButton.isSelected = false
-        kitchenButton.isSelected = false
-        livingRoomButton.isSelected = false
         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            delegate?.meetSpotButtonTapped(index: 1)
+            carButton.isSelected = false
+            kitchenButton.isSelected = false
+            livingRoomButton.isSelected = false
+        }
     }
+    
     @IBAction func kitchenPushed(_ sender: RadioButton) {
-        carButton.isSelected = false
-        frontDoorButton.isSelected = false
-        livingRoomButton.isSelected = false
         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            delegate?.meetSpotButtonTapped(index: 2)
+            frontDoorButton.isSelected = false
+            carButton.isSelected = false
+            livingRoomButton.isSelected = false
+        }
     }
+    
     @IBAction func livingRoomPushed(_ sender: RadioButton) {
-        carButton.isSelected = false
-        frontDoorButton.isSelected = false
-        kitchenButton.isSelected = false
         sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            delegate?.meetSpotButtonTapped(index: 3)
+            frontDoorButton.isSelected = false
+            kitchenButton.isSelected = false
+            carButton.isSelected = false
+        }
     }
 }

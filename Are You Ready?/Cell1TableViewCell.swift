@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol IdCellDelegate {
+    func titleEntered2(title: String)
+    func locationEntered2(location: String)
+}
+
 class Cell1TableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -15,15 +20,20 @@ class Cell1TableViewCell: UITableViewCell {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var locationField: UITextField!
     
+    var delegate: IdCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     @IBAction func titleEntered(_ sender: Any) {
+        delegate?.titleEntered2(title: titleField.text!)
     }
     
-    @IBOutlet weak var locationEntered: UITextField!
+    @IBAction func locationEntered(_ sender: Any) {
+        delegate?.locationEntered2(location: locationField.text!)
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

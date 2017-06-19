@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func showGroupAction(_ sender: Any) {
+        /*
         AreYouReadyAPI.getGroup(name: "cis55") { (result) in
             switch (result) {
             case let .success(group):
@@ -46,6 +47,7 @@ class MainViewController: UIViewController {
                 print("Request failed because \(reason)")
             }
         }
+        */
     }
     
     @IBAction func myEventsAction(_ sender: Any) {

@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol MeetUpTypeCellDelegate {
+    func meetUpButtonTapped(index:Int)
+}
+
 class MeetUpTypeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var eatOutButton: RadioButton!
     @IBOutlet weak var hangOutButton: RadioButton!
     @IBOutlet weak var meetUpButton: RadioButton!
+    
+    var delegate: MeetUpTypeCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,23 +29,44 @@ class MeetUpTypeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        //eatOutSelected = eatOutButton.getValue(forKey: "isSelected")
     }
 
     @IBAction func eatOutPushed(_ sender: RadioButton) {
-        hangOutButton.isSelected = false
-        meetUpButton.isSelected = false
-        sender.isSelected = !sender.isSelected
+        sender.isSelected = negate(sender.isSelected)
+        if sender.isSelected {
+            delegate?.meetUpButtonTapped(index: 0)
+            hangOutButton.isSelected = false
+            meetUpButton.isSelected = false
+        }
     }
     
     @IBAction func hangOutPushed(_ sender: RadioButton) {
-        eatOutButton.isSelected = false
-        meetUpButton.isSelected = false
-        sender.isSelected = !sender.isSelected
+        sender.isSelected = negate(sender.isSelected)
+        if sender.isSelected {
+            delegate?.meetUpButtonTapped(index: 1)
+            eatOutButton.isSelected = false
+            meetUpButton.isSelected = false
+        }
     }
     
     @IBAction func meetUpPushed(_ sender: RadioButton) {
-        hangOutButton.isSelected = false
-        eatOutButton.isSelected = false
-        sender.isSelected = !sender.isSelected
+        sender.isSelected = negate(sender.isSelected)
+        if sender.isSelected {
+            delegate?.meetUpButtonTapped(index: 2)
+            hangOutButton.isSelected = false
+            eatOutButton.isSelected = false
+        }
     }
+    
+    
+    func negate(_ boolToNegate: Bool) -> Bool {
+        if boolToNegate {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+    
 }

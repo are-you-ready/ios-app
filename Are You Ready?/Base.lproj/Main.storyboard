@@ -83,13 +83,6 @@
                                                 <action selector="titleEntered:" destination="pnn-CY-nB3" eventType="editingDidEnd" id="7t5-ci-uZw"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gEz-qP-uqt">
-                                            <rect key="frame" x="105" y="48" width="239" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <nil key="textColor"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyS-xB-Pqa">
                                             <rect key="frame" x="20" y="51" width="77" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -104,18 +97,50 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thx-Z8-eVd">
+                                            <rect key="frame" x="105" y="46" width="239" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="locationEntered:" destination="pnn-CY-nB3" eventType="editingDidEnd" id="gP1-f2-0gC"/>
+                                            </connections>
+                                        </textField>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="locationEntered" destination="gEz-qP-uqt" id="Mq5-IK-hyy"/>
-                                    <outlet property="locationField" destination="gEz-qP-uqt" id="Tx9-mE-6ww"/>
+                                    <outlet property="locationField" destination="thx-Z8-eVd" id="WYN-Kx-i7C"/>
                                     <outlet property="locationLabel" destination="jyS-xB-Pqa" id="asV-l5-bQN"/>
                                     <outlet property="titleField" destination="mmN-vP-USn" id="644-7M-wKD"/>
                                     <outlet property="titleLabel" destination="pTZ-sz-KZI" id="QHB-Ol-AEG"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId2" rowHeight="155" id="j42-gj-eZA" customClass="MeetUpTypeTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="115" width="375" height="155"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId2" rowHeight="117" id="7cx-6p-Qgu" customClass="MeetUpDateTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115" width="375" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7cx-6p-Qgu" id="eae-MA-GGs">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-T1-4Be">
+                                            <rect key="frame" x="33" y="-1" width="309" height="109"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="519343341.348207">
+                                                <!--2017-06-16 22:02:21 +0000-->
+                                            </date>
+                                            <connections>
+                                                <action selector="meetUpDatePicked:" destination="7cx-6p-Qgu" eventType="valueChanged" id="t3v-Uf-njl"/>
+                                            </connections>
+                                        </datePicker>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="meetUpDatePicker" destination="KCc-T1-4Be" id="V60-e7-51x"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId3" rowHeight="155" id="j42-gj-eZA" customClass="MeetUpTypeTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="232" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j42-gj-eZA" id="jlI-a9-fWq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
@@ -143,22 +168,6 @@
                                                 <action selector="meetUpPushed:" destination="j42-gj-eZA" eventType="touchUpInside" id="Yw6-U2-fXu"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRD-gU-toe" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
-                                            <rect key="frame" x="38" y="44" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
-                                                    <color key="value" red="0.91223372229999999" green="0.1185371979" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
-                                                    <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="hangOutPushed:" destination="j42-gj-eZA" eventType="touchUpInside" id="V7Z-p2-YJl"/>
-                                                <action selector="meetUpPushed:" destination="j42-gj-eZA" eventType="touchUpInside" id="gbg-SW-DSW"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hang out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlJ-ff-gZd">
                                             <rect key="frame" x="98" y="45" width="147" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -180,16 +189,23 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLl-tE-am9" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                            <rect key="frame" x="38" y="41" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="hangOutPushed:" destination="j42-gj-eZA" eventType="touchUpInside" id="nqa-4B-ihw"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eatOutButton" destination="XqD-mJ-2US" id="lwi-6O-Ywt"/>
-                                    <outlet property="hangOutButton" destination="mRD-gU-toe" id="Vq5-3W-cqx"/>
+                                    <outlet property="hangOutButton" destination="hLl-tE-am9" id="wmK-co-Jod"/>
                                     <outlet property="meetUpButton" destination="c8t-yD-53U" id="KWR-5H-XGL"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId3" rowHeight="155" id="Ypb-wX-nf1" customClass="MeetSpotTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="270" width="375" height="155"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId4" rowHeight="155" id="Ypb-wX-nf1" customClass="MeetSpotTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="387" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ypb-wX-nf1" id="E8L-2N-TFZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
@@ -260,16 +276,110 @@
                                     <outlet property="livingRoomButton" destination="Lgj-2w-sQV" id="sld-l9-oeg"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId5" rowHeight="117" id="dya-Ya-kQJ" customClass="ReadyTimeTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="542" width="375" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dya-Ya-kQJ" id="zIh-kh-LIm">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Po-0V-b98">
+                                            <rect key="frame" x="98" y="45" width="147" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CK6-FC-pRE">
+                                            <rect key="frame" x="98" y="82" width="147" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvZ-so-Kfd">
+                                            <rect key="frame" x="98" y="7" width="147" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-qe-ctc" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                            <rect key="frame" x="40" y="78" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="thirtyMinutesPushed:" destination="dya-Ya-kQJ" eventType="touchUpInside" id="Rj3-D4-N5r"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uk0-Tq-4ty" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                            <rect key="frame" x="40" y="41" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="tenMinutesPushed:" destination="dya-Ya-kQJ" eventType="touchUpInside" id="EDG-NZ-Ec4"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJf-yN-jvr" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                            <rect key="frame" x="40" y="3" width="46" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="fiveMinutesPushed:" destination="dya-Ya-kQJ" eventType="touchUpInside" id="lbU-ZI-2AI"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fiveMinuteButton" destination="pJf-yN-jvr" id="ggR-Ef-Izt"/>
+                                    <outlet property="tenMinutesButton" destination="uk0-Tq-4ty" id="Aa4-PP-S8d"/>
+                                    <outlet property="thirtyMinutesButton" destination="MDh-qe-ctc" id="vJp-YJ-zK5"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId6" rowHeight="117" id="xuv-1k-C8U" customClass="WhatsUpTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="659" width="375" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xuv-1k-C8U" id="8Ns-TL-eoR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-1J-SKc">
+                                            <rect key="frame" x="68" y="0.0" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="whatsUpTextView" destination="j8X-1J-SKc" id="Cnp-CM-m3R"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="BWe-tl-bL3" id="qrf-J5-y2h"/>
                             <outlet property="delegate" destination="BWe-tl-bL3" id="3yB-BZ-5Ma"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Add Event" id="3FU-V7-gZA">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="eTq-s9-bpg"/>
+                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="fyQ-tY-NHF">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="BWe-tl-bL3" id="szd-f0-zNj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1JG-R5-mg1">
+                            <connections>
+                                <action selector="addButtonPushed:" destination="BWe-tl-bL3" id="kT8-1v-teE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addUIBarButton" destination="1JG-R5-mg1" id="JWx-A3-Nm6"/>
+                        <outlet property="backUIBarButton" destination="1JG-R5-mg1" id="NE8-I7-W79"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0Y-UQ-hv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="787.55622188905556"/>
+            <point key="canvasLocation" x="1996" y="787.55622188905556"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -296,7 +406,7 @@
                                 <state key="normal" title="Create Event"/>
                                 <connections>
                                     <action selector="createEventAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ah3-Cb-mkS"/>
-                                    <segue destination="BWe-tl-bL3" kind="show" id="xpX-Ex-smq"/>
+                                    <segue destination="iZB-LI-JYi" kind="show" id="xpX-Ex-smq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUH-Ce-vKh">
@@ -375,6 +485,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ON-wI-WMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-719" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sDk-pq-6fo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iZB-LI-JYi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Boh-ik-iY7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BWe-tl-bL3" kind="relationship" relationship="rootViewController" id="8fd-NA-XcI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fde-3y-g2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="787.55622188905556"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
