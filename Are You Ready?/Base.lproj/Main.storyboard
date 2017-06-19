@@ -60,7 +60,7 @@
         <!--Add Event-->
         <scene sceneID="vKf-WT-fWq">
             <objects>
-                <tableViewController title="Add Event" id="BWe-tl-bL3" customClass="AddEventTableViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Add Event" title="Add Event" id="BWe-tl-bL3" customClass="AddEventTableViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QeP-9l-6XO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,7 +124,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-T1-4Be">
-                                            <rect key="frame" x="32" y="-1" width="347" height="109"/>
+                                            <rect key="frame" x="31" y="-1" width="344" height="109"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <date key="date" timeIntervalSinceReferenceDate="519343341.348207">
                                                 <!--2017-06-16 22:02:21 +0000-->
@@ -353,7 +353,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Event" id="3FU-V7-gZA">
                         <barButtonItem key="backBarButtonItem" title="Back" id="eTq-s9-bpg"/>
-                        <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="fyQ-tY-NHF">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="fyQ-tY-NHF">
                             <connections>
                                 <action selector="backButtonPressed:" destination="BWe-tl-bL3" id="szd-f0-zNj"/>
                             </connections>
@@ -407,6 +407,7 @@
                                 <state key="normal" title="My Events"/>
                                 <connections>
                                     <action selector="myEventsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PqQ-WX-r3J"/>
+                                    <segue destination="FmM-pz-oIn" kind="show" id="Y84-bk-tWp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-FQ-xec">
@@ -430,6 +431,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="845-TD-Uo4">
+            <objects>
+                <tableViewController storyboardIdentifier="My Events" id="FmM-pz-oIn" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ouJ-Rh-0fR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="y1y-n3-z3p">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y1y-n3-z3p" id="0iM-yI-DFa">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FmM-pz-oIn" id="kmC-V2-wUM"/>
+                            <outlet property="delegate" destination="FmM-pz-oIn" id="ckz-QQ-tP3"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JyJ-Bx-tqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2262" y="15"/>
         </scene>
         <!--Group Table View Controller-->
         <scene sceneID="wEc-YA-Has">
@@ -457,7 +486,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CqM-8F-aRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821.5" y="123.5"/>
+            <point key="canvasLocation" x="1735" y="-810"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lEl-Bg-3SR">
