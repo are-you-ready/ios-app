@@ -381,7 +381,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j8X-1J-SKc">
-                                            <rect key="frame" x="86.296296296296532" y="-4.8888888888886868" width="239.99999999999977" height="128"/>
+                                            <rect key="frame" x="105.55521425029747" y="-5.4954160056154251" width="199.99999999999955" height="127.99999999999977"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

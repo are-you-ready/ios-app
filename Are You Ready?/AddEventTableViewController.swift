@@ -133,6 +133,8 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
                 print("Request failed because: \(reason)")
             }
         }
+        dismiss(animated: true, completion: nil)
+        // direct back to main page after adding event
 
         
     }
