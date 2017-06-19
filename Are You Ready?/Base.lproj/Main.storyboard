@@ -156,14 +156,6 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8t-yD-53U" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                             <rect key="frame" x="38" y="78" width="46" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="outerCircleColor">
-                                                    <color key="value" red="0.91223372229999999" green="0.1185371979" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="innerCircleCircleColor">
-                                                    <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="meetUpPushed:" destination="j42-gj-eZA" eventType="touchUpInside" id="Yw6-U2-fXu"/>
                                             </connections>

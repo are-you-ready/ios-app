@@ -118,8 +118,8 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             meetupLocation: meetUpLocation,
             createdBy: AYRUser(name: user),
             createdAt: Date(), // This value will be replaced by the server anyway
-            notificationTime: Date(timeIntervalSinceNow: 300),
-            readyTime: readyTime!,
+            notificationTime: readyTime!,
+            readyTime: eventDate,
             attendees: [:]     // This value will also be auto-populated by the server
         )
         
