@@ -352,7 +352,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Event" id="3FU-V7-gZA">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="eTq-s9-bpg"/>
                         <barButtonItem key="leftBarButtonItem" title="&lt;Back" id="fyQ-tY-NHF">
                             <connections>
                                 <action selector="backButtonPressed:" destination="BWe-tl-bL3" id="szd-f0-zNj"/>
@@ -371,7 +370,35 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0Y-UQ-hv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="787.55622188905556"/>
+            <point key="canvasLocation" x="1500" y="847"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="xdf-91-ndj">
+            <objects>
+                <tableViewController id="VZB-wD-q78" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EJt-wc-XzW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="61C-h6-WBx">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="61C-h6-WBx" id="KlU-Ja-RbM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VZB-wD-q78" id="bn0-VS-j3K"/>
+                            <outlet property="delegate" destination="VZB-wD-q78" id="ivt-8L-XjH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N6n-Md-e4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2184" y="361"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -398,7 +425,6 @@
                                 <state key="normal" title="Create Event"/>
                                 <connections>
                                     <action selector="createEventAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ah3-Cb-mkS"/>
-                                    <segue destination="iZB-LI-JYi" kind="show" id="xpX-Ex-smq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUH-Ce-vKh">
@@ -407,6 +433,7 @@
                                 <state key="normal" title="My Events"/>
                                 <connections>
                                     <action selector="myEventsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PqQ-WX-r3J"/>
+                                    <segue destination="VZB-wD-q78" kind="show" id="EbI-3g-XiM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-FQ-xec">
@@ -415,6 +442,7 @@
                                 <state key="normal" title="Show Group"/>
                                 <connections>
                                     <action selector="showGroupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdJ-k6-sME"/>
+                                    <segue destination="BWe-tl-bL3" kind="show" id="N0H-A9-el1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -457,7 +485,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CqM-8F-aRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821.5" y="123.5"/>
+            <point key="canvasLocation" x="1893" y="-251"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lEl-Bg-3SR">
@@ -477,24 +505,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ON-wI-WMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-719" y="112"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="sDk-pq-6fo">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iZB-LI-JYi" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Boh-ik-iY7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BWe-tl-bL3" kind="relationship" relationship="rootViewController" id="8fd-NA-XcI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fde-3y-g2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1056.8" y="787.55622188905556"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
