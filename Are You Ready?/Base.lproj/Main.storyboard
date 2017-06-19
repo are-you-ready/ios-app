@@ -41,7 +41,7 @@
                                 <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="buttonPushed:" destination="Hsa-pB-fBW" eventType="touchUpInside" id="Jrs-ss-b4f"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="AfterLoginDirectToMain" id="0Lb-ks-0jR"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="" id="0Lb-ks-0jR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,7 +124,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-T1-4Be">
-                                            <rect key="frame" x="32" y="-1" width="347" height="109"/>
+                                            <rect key="frame" x="30" y="-1" width="348" height="109"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <date key="date" timeIntervalSinceReferenceDate="519343341.348207">
                                                 <!--2017-06-16 22:02:21 +0000-->
