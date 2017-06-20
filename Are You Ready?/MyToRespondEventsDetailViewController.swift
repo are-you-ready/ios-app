@@ -29,7 +29,6 @@ class MyToRespondEventsDetailViewController: UIViewController {
             case let .success(group):
                 print(group.name)
                 let notificationTime = group.events[self.myEvent!.name]?.notificationTime
-                //#sage: double check this thing to make sure it aint no neg num
                 let diff = notificationTime!.timeIntervalSince(Date())
                 print(diff)
                 
@@ -44,6 +43,10 @@ class MyToRespondEventsDetailViewController: UIViewController {
     }
     
     func setNotification(time: Double) {
+        if time <= 0 {
+            return
+        }
+
         let content = UNMutableNotificationContent()
         
         content.title = myEvent!.name
@@ -63,7 +66,6 @@ class MyToRespondEventsDetailViewController: UIViewController {
                 print(error)
             }
         }
-        print("should have been added")
     }
     
     override func viewDidAppear(_ animated: Bool) {
