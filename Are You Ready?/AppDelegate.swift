@@ -44,9 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //format nav bar
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.07058823529, green: 0.2352941176, blue: 0.5215686275, alpha: 1)
         UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 20)]
 
         // Override point for customization after application launch.
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)

@@ -43,6 +43,7 @@ class MyGetReadyEventsDetailView: UIViewController {
                 whosReadyText += "\(attendee.user.name): Not ready... yet\n"
             }
         }
+        whosReady.text = whosReadyText
     }
 
     override func didReceiveMemoryWarning() {
