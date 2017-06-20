@@ -12,8 +12,9 @@ class MyEventsTableViewController: UITableViewController {
 
     var myToRespondEvents = [AYREvent]()
     var myToGetReadyEvents = [AYREvent]()
-    var eventIndex = 0
-    
+
+    var formatter = DateFormatter()
+
     func handleRefresh() {
         AreYouReadyAPI.getGroup("cis55") { result in
             switch (result) {
@@ -35,7 +36,9 @@ class MyEventsTableViewController: UITableViewController {
                         self.myToGetReadyEvents += [event]
                     }
                 }
+                
                 self.tableView.reloadData()
+                
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
@@ -51,6 +54,9 @@ class MyEventsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        
         self.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: UIControlEvents.valueChanged)
         handleRefresh()
     }
@@ -67,9 +73,12 @@ class MyEventsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0: return myToRespondEvents.count
-        case 1: return myToGetReadyEvents.count
-        default: return 0
+        case 0:
+            return myToRespondEvents.count
+        case 1:
+            return myToGetReadyEvents.count
+        default:
+            return 0
         }
     }
     
@@ -81,10 +90,8 @@ class MyEventsTableViewController: UITableViewController {
             let event = myToRespondEvents[indexPath.row]
         
             cell.cellEventName.text = event.name
-            cell.cellEventTime.text = event.readyTime.description
+            cell.cellEventTime.text = formatter.string(from: event.readyTime)
             cell.cellEventLocation.text = event.location
-
-            eventIndex = indexPath.row
         
             return cell
             
@@ -94,7 +101,7 @@ class MyEventsTableViewController: UITableViewController {
             let event = myToGetReadyEvents[indexPath.row]
             
             cell.cellEventName.text = event.name
-            cell.cellEventTime.text = event.readyTime.description
+            cell.cellEventTime.text = formatter.string(from: event.readyTime)
             cell.cellEventLocation.text = event.location
             
             return cell
@@ -105,10 +112,8 @@ class MyEventsTableViewController: UITableViewController {
             let event = myToRespondEvents[indexPath.row]
             
             cell.cellEventName.text = event.name
-            cell.cellEventTime.text = event.readyTime.description
+            cell.cellEventTime.text = formatter.string(from: event.readyTime)
             cell.cellEventLocation.text = event.location
-            
-            eventIndex = indexPath.row
             
             return cell
         }
@@ -116,9 +121,12 @@ class MyEventsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0: return "Are you coming?"
-        case 1: return "Are you ready?"
-        default: return nil
+        case 0:
+            return "Are you coming?"
+        case 1:
+            return "Are you ready?"
+        default:
+            return nil
         }
     }
     
