@@ -11,6 +11,7 @@ import UIKit
 class MyEventsTableViewController: UITableViewController {
 
     var myEvents = [AYREvent]()
+    var eventIndex = 0
     
     func handleRefresh() {
         AreYouReadyAPI.getGroup("cis55") { result in
@@ -49,7 +50,7 @@ class MyEventsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myEvents.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyEventsCell", for: indexPath) as! MyEventsTableViewCell
         let event = myEvents[indexPath.row]
@@ -58,6 +59,16 @@ class MyEventsTableViewController: UITableViewController {
         cell.cellEventTime.text = event.readyTime.description
         cell.cellEventLocation.text = event.location
 
+        eventIndex = indexPath.row
+        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MyEventsDetailSegue" {
+            let viewController = segue.destination as! MyEventsDetailViewController
+            let cell = sender as! MyEventsTableViewCell
+            viewController.myEvent = myEvents[self.tableView.indexPath(for: cell)!.row]
+        }
     }
 }
