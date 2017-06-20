@@ -12,10 +12,38 @@ class MyGetReadyEventsDetailView: UIViewController {
 
     var myEvent: AYREvent? = nil
     
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var whosReady: UITextView!
+
+    @IBAction func pressReady(_ sender: Any) {
+        AreYouReadyAPI.updateStatus(group: "cis55", event: myEvent!.name, user: "Markus", status: .ready) { result in
+            switch (result) {
+            case let .success(group):
+                print(group.name)
+            case let .failure(.requestFailure(reason, _)),
+                 let .failure(.JSONParseFailure(reason)),
+                 let .failure(.JSONErrorResponse(reason, _)):
+                print("Request failed because: \(reason)")
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        eventName.text = myEvent?.name
+        
+        var whosReadyText = ""
+        for attendee in Array(myEvent!.attendees.values) {
+            switch attendee.status {
+            case .ready:
+                whosReadyText += "\(attendee.user.name): IS READY!\n"
+            default:
+                whosReadyText += "\(attendee.user.name): Not ready... yet\n"
+            }
+        }
+        whosReady.text = whosReadyText
     }
 
     override func didReceiveMemoryWarning() {

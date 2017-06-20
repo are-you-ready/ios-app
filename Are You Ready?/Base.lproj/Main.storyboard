@@ -124,7 +124,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-T1-4Be">
-                                            <rect key="frame" x="26" y="-1" width="345" height="109"/>
+                                            <rect key="frame" x="24" y="-1" width="345" height="109"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <date key="date" timeIntervalSinceReferenceDate="519343341.348207">
                                                 <!--2017-06-16 22:02:21 +0000-->
@@ -401,7 +401,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Event" id="3FU-V7-gZA">
                         <barButtonItem key="backBarButtonItem" title="Back" id="eTq-s9-bpg"/>
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="fyQ-tY-NHF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fyQ-tY-NHF">
                             <connections>
                                 <action selector="backButtonPressed:" destination="BWe-tl-bL3" id="szd-f0-zNj"/>
                             </connections>
@@ -437,21 +437,35 @@
                                 <rect key="frame" x="176" y="628" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I'm ready"/>
+                                <connections>
+                                    <action selector="pressReady:" destination="AmO-7p-ckd" eventType="touchUpInside" id="1WD-GL-oKf"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Who's Ready" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-lx-XSf">
-                                <rect key="frame" x="20" y="466" width="240" height="128"/>
+                                <rect key="frame" x="20" y="441" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3q-dq-kYG">
+                                <rect key="frame" x="20" y="28" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="eventName" destination="b3q-dq-kYG" id="dMA-cu-jAB"/>
+                        <outlet property="whosReady" destination="Eeh-lx-XSf" id="mF3-ed-B9d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cu-fG-mQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3454" y="587"/>
+            <point key="canvasLocation" x="3453.6231884057975" y="586.95652173913049"/>
         </scene>
         <!--Group Table View Controller-->
         <scene sceneID="6PA-bk-5AB">
@@ -550,7 +564,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.21635611712361175" green="0.33377351624716539" blue="0.82545336787564771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.23529411764705882" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -563,7 +577,7 @@
             </objects>
             <point key="canvasLocation" x="1055.072463768116" y="123.09782608695653"/>
         </scene>
-        <!--My Events Table View Controller-->
+        <!--My Events-->
         <scene sceneID="845-TD-Uo4">
             <objects>
                 <tableViewController storyboardIdentifier="My Events" id="FmM-pz-oIn" customClass="MyEventsTableViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
@@ -643,7 +657,7 @@
                                     <outlet property="cellEventLocation" destination="PR6-7G-fqG" id="jhj-om-hSi"/>
                                     <outlet property="cellEventName" destination="ZIl-eA-nEB" id="cGS-S5-MnW"/>
                                     <outlet property="cellEventTime" destination="UZF-Xd-W84" id="UbK-dH-gku"/>
-                                    <segue destination="AmO-7p-ckd" kind="show" id="qLC-Yf-4OB"/>
+                                    <segue destination="AmO-7p-ckd" kind="show" identifier="MyToGetReadyEventsDetailSegue" id="qLC-Yf-4OB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -652,6 +666,7 @@
                             <outlet property="delegate" destination="FmM-pz-oIn" id="ckz-QQ-tP3"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="My Events" id="L0z-jP-TDL"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Rf1-AB-BhT">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -674,67 +689,111 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eag-nm-StA">
-                                <rect key="frame" x="39" y="117" width="93" height="21"/>
+                                <rect key="frame" x="20" y="20" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61P-hq-vNa">
-                                <rect key="frame" x="38" y="193" width="356" height="21"/>
+                                <rect key="frame" x="111" y="119" width="284" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meetup Spot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8n-Uo-DKl">
-                                <rect key="frame" x="38" y="222" width="356" height="21"/>
+                                <rect key="frame" x="111" y="148" width="283" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f3-Hw-ILK">
-                                <rect key="frame" x="39" y="164" width="356" height="21"/>
+                                <rect key="frame" x="111" y="91" width="284" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What's up" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-RM-2gf">
-                                <rect key="frame" x="38" y="251" width="357" height="203"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="What's up" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-RM-2gf">
+                                <rect key="frame" x="20" y="195" width="374" height="183"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notification Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdh-Eb-Bjf">
-                                <rect key="frame" x="39" y="462" width="346" height="21"/>
+                                <rect key="frame" x="174" y="386" width="151" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-HW-59C">
-                                <rect key="frame" x="20" y="661" width="151" height="55"/>
+                                <rect key="frame" x="20" y="606" width="190" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Yes"/>
+                                <state key="normal" title="I'm coming!"/>
+                                <connections>
+                                    <action selector="pressComing:" destination="xRd-yv-zOs" eventType="touchUpInside" id="yhm-97-9kz"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hto-Eu-4CB">
-                                <rect key="frame" x="209" y="673" width="176" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEf-op-Pan">
+                                <rect key="frame" x="20" y="91" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="No"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I05-e1-cC1">
+                                <rect key="frame" x="20" y="120" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meet at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-iw-h2o">
+                                <rect key="frame" x="20" y="149" width="63" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please respond by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-fc-6x9">
+                                <rect key="frame" x="20" y="386" width="146" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Who's coming?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Igc-Pr-9AJ">
+                                <rect key="frame" x="20" y="415" width="374" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hto-Eu-4CB">
+                                <rect key="frame" x="218" y="606" width="176" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Not gonna go..."/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="eventName" destination="eag-nm-StA" id="uLM-pk-f8h"/>
+                        <outlet property="location" destination="6f3-Hw-ILK" id="pYv-N1-v2K"/>
+                        <outlet property="meetupSpot" destination="h8n-Uo-DKl" id="blu-je-dt5"/>
+                        <outlet property="notificationTime" destination="zdh-Eb-Bjf" id="Kwf-XM-SvG"/>
+                        <outlet property="time" destination="61P-hq-vNa" id="cdu-4g-hP9"/>
+                        <outlet property="whatsUp" destination="KmN-RM-2gf" id="KhF-0E-P4M"/>
+                        <outlet property="whosComing" destination="Igc-Pr-9AJ" id="IFn-K7-cwV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEf-jZ-JeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3455" y="-112"/>
+            <point key="canvasLocation" x="3453.6231884057975" y="-112.50000000000001"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lEl-Bg-3SR">
