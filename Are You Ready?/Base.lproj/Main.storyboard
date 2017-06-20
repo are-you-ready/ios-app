@@ -437,21 +437,35 @@
                                 <rect key="frame" x="176" y="628" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I'm ready"/>
+                                <connections>
+                                    <action selector="pressReady:" destination="AmO-7p-ckd" eventType="touchUpInside" id="1WD-GL-oKf"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Who's Ready" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-lx-XSf">
-                                <rect key="frame" x="20" y="466" width="240" height="128"/>
+                                <rect key="frame" x="20" y="441" width="374" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3q-dq-kYG">
+                                <rect key="frame" x="20" y="28" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="eventName" destination="b3q-dq-kYG" id="dMA-cu-jAB"/>
+                        <outlet property="whosReady" destination="Eeh-lx-XSf" id="mF3-ed-B9d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cu-fG-mQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3454" y="587"/>
+            <point key="canvasLocation" x="3453.6231884057975" y="586.95652173913049"/>
         </scene>
         <!--Group Table View Controller-->
         <scene sceneID="6PA-bk-5AB">
