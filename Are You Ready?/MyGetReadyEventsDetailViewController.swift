@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyGetReadyEventsDetailView: UIViewController {
+class MyGetReadyEventsDetailViewController: UIViewController {
 
     var myEvent: AYREvent? = nil
     

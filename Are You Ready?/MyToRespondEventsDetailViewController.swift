@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import UserNotifications
 
-class MyEventsDetailViewController: UIViewController {
+class MyToRespondEventsDetailViewController: UIViewController {
 
     var myEvent: AYREvent? = nil
     var mediumFormatter = DateFormatter()
@@ -27,6 +28,13 @@ class MyEventsDetailViewController: UIViewController {
             switch (result) {
             case let .success(group):
                 print(group.name)
+                let notificationTime = group.events[self.myEvent!.name]?.notificationTime
+                //#sage: double check this thing to make sure it aint no neg num
+                let diff = notificationTime!.timeIntervalSince(Date())
+                print(diff)
+                
+                
+                self.setNotification(time: diff)
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
@@ -34,7 +42,39 @@ class MyEventsDetailViewController: UIViewController {
             }
         }
     }
-
+    
+    func setNotification(time: Double) {
+        let content = UNMutableNotificationContent()
+        
+        content.title = myEvent!.name
+        content.body = myEvent!.location + " at " + shortFormatter.string(from: myEvent!.readyTime)
+        
+        
+        content.sound = UNNotificationSound.default()
+        
+        // Deliver the notification in five seconds.
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: time, repeats: false)
+        let request = UNNotificationRequest.init(identifier: "FiveSecond", content: content, trigger: trigger)
+        
+        // Schedule the notification.
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error) in
+            if let error = error {
+                print(error)
+            }
+        }
+        print("should have been added")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+        }
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mediumFormatter.dateStyle = .medium

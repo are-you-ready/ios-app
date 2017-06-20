@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBw-YI-5Id" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="300" y="749.7751124437782"/>
+            <point key="canvasLocation" x="-720" y="955"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="vKf-WT-fWq">
@@ -124,7 +124,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-T1-4Be">
-                                            <rect key="frame" x="30" y="-1" width="348" height="109"/>
+                                            <rect key="frame" x="29" y="-1" width="346" height="109"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                             <date key="date" timeIntervalSinceReferenceDate="519343341.348207">
                                                 <!--2017-06-16 22:02:21 +0000-->
@@ -147,7 +147,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="sM0-5N-k4C">
-                                            <rect key="frame" x="25.000000000000007" y="7" width="117.66666666666667" height="102"/>
+                                            <rect key="frame" x="25" y="7" width="117.66666666666667" height="102"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hEX-8b-pxL">
@@ -419,7 +419,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0Y-UQ-hv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="787.55622188905556"/>
+            <point key="canvasLocation" x="2013" y="-772"/>
         </scene>
         <!--My Get Ready Events Detail View-->
         <scene sceneID="iij-x6-kwN">
@@ -465,31 +465,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cu-fG-mQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3453.6231884057975" y="586.95652173913049"/>
+            <point key="canvasLocation" x="2688" y="456"/>
         </scene>
-        <!--Group Table View Controller-->
+        <!--My Group Table View Controller-->
         <scene sceneID="6PA-bk-5AB">
             <objects>
-                <tableViewController id="ZEz-rb-Ngj" customClass="GroupTableViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ZEz-rb-Ngj" customClass="MyGroupTableViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vem-u7-yDG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oUL-Vs-ATH">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NMo-EV-1Ub">
-                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupCell" id="NMo-EV-1Ub" customClass="MyGroupTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NMo-EV-1Ub" id="N8D-Ah-RfV">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Member Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-P2-lfI">
+                                            <rect key="frame" x="8" y="12" width="398" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groupMemberNameLabel" destination="n3Y-P2-lfI" id="ta5-yz-t56"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -497,10 +502,14 @@
                             <outlet property="delegate" destination="ZEz-rb-Ngj" id="GDu-yu-Qy2"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="cnJ-iu-Ktp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPV-aS-vJQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1728" y="-635"/>
+            <point key="canvasLocation" x="1234.7826086956522" y="954.61956521739137"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -515,7 +524,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUH-Ce-vKh">
-                                <rect key="frame" x="103" y="378" width="207" height="50"/>
+                                <rect key="frame" x="103.22915917076966" y="378" width="207.00000000000006" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.33757274058307163" green="0.68907869170984459" blue="0.29854126138021542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
@@ -525,15 +534,6 @@
                                 <connections>
                                     <action selector="myEventsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PqQ-WX-r3J"/>
                                     <segue destination="FmM-pz-oIn" kind="show" id="Y84-bk-tWp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-FQ-xec">
-                                <rect key="frame" x="159" y="505" width="110" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show Group"/>
-                                <connections>
-                                    <action selector="showGroupAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sdJ-k6-sME"/>
-                                    <segue destination="ZEz-rb-Ngj" kind="show" id="U3Z-6h-B8y"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are You..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQS-WF-LPT">
@@ -551,7 +551,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDf-lh-ryA">
-                                <rect key="frame" x="104" y="320" width="207" height="49.999999999999986"/>
+                                <rect key="frame" x="103.22915917076921" y="320" width="207.00000000000006" height="50.000000000000028"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.33757274058307163" green="0.68907869170984459" blue="0.29854126138021542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
@@ -575,6 +575,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6U-Qe-9oR">
+                                <rect key="frame" x="103.22915917076921" y="436" width="207.00000000000006" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.33757274059999998" green="0.68907869170000002" blue="0.29854126139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <state key="normal" title="My Group">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="myEventsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eyS-gT-W0y"/>
+                                    <segue destination="ZEz-rb-Ngj" kind="show" id="c9d-zI-MnO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.23529411764705882" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -582,24 +595,23 @@
                     <connections>
                         <outlet property="createEventButton" destination="WDf-lh-ryA" id="9yb-zc-709"/>
                         <outlet property="myEventsButton" destination="bUH-Ce-vKh" id="4vr-gW-7iB"/>
-                        <outlet property="showGroupButton" destination="bPg-FQ-xec" id="Dae-fe-ONr"/>
                         <outlet property="whoAmILabel" destination="8CO-ph-vSu" id="PDm-8z-0Vi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.072463768116" y="123.09782608695653"/>
+            <point key="canvasLocation" x="216" y="112"/>
         </scene>
         <!--My Events-->
         <scene sceneID="845-TD-Uo4">
             <objects>
-                <tableViewController storyboardIdentifier="My Events" id="FmM-pz-oIn" customClass="MyEventsTableViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="My Eventsjj" id="FmM-pz-oIn" customClass="MyEventsTableViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="ouJ-Rh-0fR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyEventsCell" rowHeight="100" id="y1y-n3-z3p" customClass="MyEventsTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyEventsCell" rowHeight="100" id="y1y-n3-z3p" customClass="MyToRespondEventsTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y1y-n3-z3p" id="0iM-yI-DFa">
@@ -687,12 +699,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JyJ-Bx-tqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260.8695652173915" y="14.673913043478262"/>
+            <point key="canvasLocation" x="1236" y="112"/>
         </scene>
-        <!--My Events Detail View Controller-->
+        <!--My To Respond Events Detail View Controller-->
         <scene sceneID="R4c-Aj-RYb">
             <objects>
-                <viewController id="xRd-yv-zOs" customClass="MyEventsDetailViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xRd-yv-zOs" customClass="MyToRespondEventsDetailViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SaI-OY-bwE"/>
                         <viewControllerLayoutGuide type="bottom" id="fSC-9m-Y8d"/>
@@ -806,7 +818,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEf-jZ-JeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3453.6231884057975" y="-112.50000000000001"/>
+            <point key="canvasLocation" x="2687" y="-217"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lEl-Bg-3SR">
@@ -845,24 +857,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fde-3y-g2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="787.55622188905556"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="q48-e9-8lZ">
-            <objects>
-                <viewController id="DZ2-9h-ziE" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8ay-Qo-PJU"/>
-                        <viewControllerLayoutGuide type="bottom" id="o1Q-f4-dUc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4am-cs-Ufh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ape-D0-xpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="1235" y="-772"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

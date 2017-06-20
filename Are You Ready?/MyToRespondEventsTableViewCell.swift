@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyEventsTableViewCell: UITableViewCell {
+class MyToRespondEventsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cellEventName: UILabel!
     @IBOutlet weak var cellEventTime: UILabel!

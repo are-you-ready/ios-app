@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4FE11FA91EF1DACF005060E2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FA81EF1DACF005060E2 /* LoginViewController.swift */; };
 		4FE11FAC1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FAA1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld */; };
-		4FE11FAE1EF1ED65005060E2 /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FAD1EF1ED65005060E2 /* GroupTableViewController.swift */; };
+		4FE11FAE1EF1ED65005060E2 /* MyGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FAD1EF1ED65005060E2 /* MyGroupTableViewController.swift */; };
 		4FE11FB21EF2062E005060E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FB11EF2062E005060E2 /* MainViewController.swift */; };
 		4FE11FB41EF2F9AB005060E2 /* AddEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FB31EF2F9AB005060E2 /* AddEventTableViewController.swift */; };
 		4FE11FB61EF2FF63005060E2 /* Cell1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FB51EF2FF63005060E2 /* Cell1TableViewCell.swift */; };
@@ -28,10 +28,11 @@
 		AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589B1EE610EC00EB4919 /* AYRUser.swift */; };
 		AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589D1EE6116200EB4919 /* AYRGroup.swift */; };
 		AF463E141EF786FA00942244 /* MyEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E131EF786FA00942244 /* MyEventsTableViewController.swift */; };
-		AF463E161EF7877600942244 /* MyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E151EF7877600942244 /* MyEventsTableViewCell.swift */; };
-		AF463E181EF8C28600942244 /* MyEventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E171EF8C28600942244 /* MyEventsDetailViewController.swift */; };
+		AF463E161EF7877600942244 /* MyToRespondEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E151EF7877600942244 /* MyToRespondEventsTableViewCell.swift */; };
+		AF463E181EF8C28600942244 /* MyToRespondEventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E171EF8C28600942244 /* MyToRespondEventsDetailViewController.swift */; };
 		AF463E1A1EF8E0EF00942244 /* MyGetReadyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E191EF8E0EF00942244 /* MyGetReadyEventsTableViewCell.swift */; };
-		AF463E1C1EF8E70700942244 /* MyGetReadyEventsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E1B1EF8E70700942244 /* MyGetReadyEventsDetailView.swift */; };
+		AF463E1C1EF8E70700942244 /* MyGetReadyEventsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E1B1EF8E70700942244 /* MyGetReadyEventsDetailViewController.swift */; };
+		AF463E221EF9B30200942244 /* MyGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E211EF9B30200942244 /* MyGroupTableViewCell.swift */; };
 		AF61D4771EF228E100063168 /* AYREvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D4761EF228E100063168 /* AYREvent.swift */; };
 		AF61D4791EF32D4B00063168 /* AYRJsonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D4781EF32D4B00063168 /* AYRJsonError.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +40,7 @@
 /* Begin PBXFileReference section */
 		4FE11FA81EF1DACF005060E2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4FE11FAB1EF1DD96005060E2 /* Are You Ready?.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Are You Ready?.xcdatamodel"; sourceTree = "<group>"; };
-		4FE11FAD1EF1ED65005060E2 /* GroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		4FE11FAD1EF1ED65005060E2 /* MyGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupTableViewController.swift; sourceTree = "<group>"; };
 		4FE11FB11EF2062E005060E2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4FE11FB31EF2F9AB005060E2 /* AddEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventTableViewController.swift; sourceTree = "<group>"; };
 		4FE11FB51EF2FF63005060E2 /* Cell1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell1TableViewCell.swift; sourceTree = "<group>"; };
@@ -60,10 +61,11 @@
 		AF3A589B1EE610EC00EB4919 /* AYRUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRUser.swift; sourceTree = "<group>"; };
 		AF3A589D1EE6116200EB4919 /* AYRGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRGroup.swift; sourceTree = "<group>"; };
 		AF463E131EF786FA00942244 /* MyEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsTableViewController.swift; sourceTree = "<group>"; };
-		AF463E151EF7877600942244 /* MyEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsTableViewCell.swift; sourceTree = "<group>"; };
-		AF463E171EF8C28600942244 /* MyEventsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsDetailViewController.swift; sourceTree = "<group>"; };
+		AF463E151EF7877600942244 /* MyToRespondEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyToRespondEventsTableViewCell.swift; sourceTree = "<group>"; };
+		AF463E171EF8C28600942244 /* MyToRespondEventsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyToRespondEventsDetailViewController.swift; sourceTree = "<group>"; };
 		AF463E191EF8E0EF00942244 /* MyGetReadyEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGetReadyEventsTableViewCell.swift; sourceTree = "<group>"; };
-		AF463E1B1EF8E70700942244 /* MyGetReadyEventsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGetReadyEventsDetailView.swift; sourceTree = "<group>"; };
+		AF463E1B1EF8E70700942244 /* MyGetReadyEventsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGetReadyEventsDetailViewController.swift; sourceTree = "<group>"; };
+		AF463E211EF9B30200942244 /* MyGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGroupTableViewCell.swift; path = ../MyGroupTableViewCell.swift; sourceTree = "<group>"; };
 		AF61D4761EF228E100063168 /* AYREvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYREvent.swift; sourceTree = "<group>"; };
 		AF61D4781EF32D4B00063168 /* AYRJsonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRJsonError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,8 +101,9 @@
 		AF34FFE81ECCC43400029391 /* Are You Ready? */ = {
 			isa = PBXGroup;
 			children = (
-				AF463E1D1EF8E73F00942244 /* MyEvents */,
 				AF9C722E1ECE1A210059CEB0 /* structures */,
+				AF463E1D1EF8E73F00942244 /* MyEvents */,
+				AF463E201EF9B16300942244 /* MyGroup */,
 				AF34FFE91ECCC43400029391 /* AppDelegate.swift */,
 				AF34FFEB1ECCC43400029391 /* ViewController.swift */,
 				AF34FFED1ECCC43400029391 /* Main.storyboard */,
@@ -113,7 +116,6 @@
 				4FE11FC11EF48D61005060E2 /* MeetUpDateTableViewCell.swift */,
 				4FE11FB91EF34766005060E2 /* RadioButton.swift */,
 				4FE11FB11EF2062E005060E2 /* MainViewController.swift */,
-				4FE11FAD1EF1ED65005060E2 /* GroupTableViewController.swift */,
 				4FE11FA81EF1DACF005060E2 /* LoginViewController.swift */,
 				AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */,
 				AF34FFF01ECCC43400029391 /* Assets.xcassets */,
@@ -127,12 +129,21 @@
 			isa = PBXGroup;
 			children = (
 				AF463E131EF786FA00942244 /* MyEventsTableViewController.swift */,
-				AF463E151EF7877600942244 /* MyEventsTableViewCell.swift */,
-				AF463E171EF8C28600942244 /* MyEventsDetailViewController.swift */,
+				AF463E151EF7877600942244 /* MyToRespondEventsTableViewCell.swift */,
+				AF463E171EF8C28600942244 /* MyToRespondEventsDetailViewController.swift */,
 				AF463E191EF8E0EF00942244 /* MyGetReadyEventsTableViewCell.swift */,
-				AF463E1B1EF8E70700942244 /* MyGetReadyEventsDetailView.swift */,
+				AF463E1B1EF8E70700942244 /* MyGetReadyEventsDetailViewController.swift */,
 			);
 			name = MyEvents;
+			sourceTree = "<group>";
+		};
+		AF463E201EF9B16300942244 /* MyGroup */ = {
+			isa = PBXGroup;
+			children = (
+				AF463E211EF9B30200942244 /* MyGroupTableViewCell.swift */,
+				4FE11FAD1EF1ED65005060E2 /* MyGroupTableViewController.swift */,
+			);
+			name = MyGroup;
 			sourceTree = "<group>";
 		};
 		AF9C722E1ECE1A210059CEB0 /* structures */ = {
@@ -179,7 +190,7 @@
 				TargetAttributes = {
 					AF34FFE51ECCC43400029391 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 2NKLZJVG9L;
+						DevelopmentTeam = SU257R86UN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -220,28 +231,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF463E181EF8C28600942244 /* MyEventsDetailViewController.swift in Sources */,
+				AF463E181EF8C28600942244 /* MyToRespondEventsDetailViewController.swift in Sources */,
 				4FE11FB61EF2FF63005060E2 /* Cell1TableViewCell.swift in Sources */,
 				4FE11FC41EF493C1005060E2 /* WhatsUpTableViewCell.swift in Sources */,
-				AF463E161EF7877600942244 /* MyEventsTableViewCell.swift in Sources */,
+				AF463E161EF7877600942244 /* MyToRespondEventsTableViewCell.swift in Sources */,
 				4FE11FBC1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift in Sources */,
 				4FE11FB41EF2F9AB005060E2 /* AddEventTableViewController.swift in Sources */,
 				AF61D4791EF32D4B00063168 /* AYRJsonError.swift in Sources */,
 				4FE11FA91EF1DACF005060E2 /* LoginViewController.swift in Sources */,
 				AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */,
 				AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */,
-				AF463E1C1EF8E70700942244 /* MyGetReadyEventsDetailView.swift in Sources */,
+				AF463E1C1EF8E70700942244 /* MyGetReadyEventsDetailViewController.swift in Sources */,
 				4FE11FBE1EF379D9005060E2 /* MeetSpotTableViewCell.swift in Sources */,
 				AF34FFEA1ECCC43400029391 /* AppDelegate.swift in Sources */,
 				4FE11FC01EF4891C005060E2 /* ReadyTimeTableViewCell.swift in Sources */,
 				AF463E1A1EF8E0EF00942244 /* MyGetReadyEventsTableViewCell.swift in Sources */,
 				4FE11FBA1EF34766005060E2 /* RadioButton.swift in Sources */,
 				4FE11FAC1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld in Sources */,
-				4FE11FAE1EF1ED65005060E2 /* GroupTableViewController.swift in Sources */,
+				4FE11FAE1EF1ED65005060E2 /* MyGroupTableViewController.swift in Sources */,
 				AF463E141EF786FA00942244 /* MyEventsTableViewController.swift in Sources */,
 				4FE11FC21EF48D61005060E2 /* MeetUpDateTableViewCell.swift in Sources */,
 				4FE11FB21EF2062E005060E2 /* MainViewController.swift in Sources */,
 				AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */,
+				AF463E221EF9B30200942244 /* MyGroupTableViewCell.swift in Sources */,
 				AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */,
 				AF61D4771EF228E100063168 /* AYREvent.swift in Sources */,
 			);
@@ -368,7 +380,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2NKLZJVG9L;
+				DEVELOPMENT_TEAM = SU257R86UN;
 				INFOPLIST_FILE = "Are You Ready?/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -382,7 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2NKLZJVG9L;
+				DEVELOPMENT_TEAM = SU257R86UN;
 				INFOPLIST_FILE = "Are You Ready?/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
