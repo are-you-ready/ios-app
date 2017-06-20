@@ -74,7 +74,7 @@ class MyEventsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyEventsCell", for: indexPath) as! MyEventsTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyEventsCell", for: indexPath) as! MyToRespondEventsTableViewCell
             let event = myToRespondEvents[indexPath.row]
 
             cell.cellEventName.text = event.name
@@ -115,12 +115,12 @@ class MyEventsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
         case "MyEventsDetailSegue":
-            let viewController = segue.destination as! MyEventsDetailViewController
-            let cell = sender as! MyEventsTableViewCell
+            let viewController = segue.destination as! MyToRespondEventsDetailViewController
+            let cell = sender as! MyToRespondEventsTableViewCell
             viewController.myEvent = myToRespondEvents[self.tableView.indexPath(for: cell)!.row]
 
         case "MyToGetReadyEventsDetailSegue":
-            let viewController = segue.destination as! MyGetReadyEventsDetailView
+            let viewController = segue.destination as! MyGetReadyEventsDetailViewController
             let cell = sender as! MyGetReadyEventsTableViewCell
             viewController.myEvent = myToGetReadyEvents[self.tableView.indexPath(for: cell)!.row]
 
