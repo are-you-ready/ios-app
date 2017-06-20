@@ -95,20 +95,6 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
         let calendar = Calendar.current
         let readyTime = calendar.date(byAdding: .second, value: (readySeconds * -1), to: eventDate)
         
-        /*
-        let event = AYREvent(
-            name: "Awesome Event",
-            type: .eatOut,
-            description: "Let's go do stuff",
-            location: "Somewhere far, far away",
-            meetupLocation: .car,
-            createdBy: AYRUser(name: "Markus"),
-            createdAt: Date(), // This value will be replaced by the server anyway
-            notificationTime: Date(timeIntervalSinceNow: 300),
-            readyTime: Date(timeIntervalSinceNow: 600),
-            attendees: [:]     // This value will also be auto-populated by the server
-        )
-        */
 user = "Markus"
         let event = AYREvent(
             name: eventTitle,
@@ -127,13 +113,22 @@ user = "Markus"
             switch (result) {
             case let .success(group):
                 print(group.name)
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
                 print("Request failed because: \(reason)")
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Failed to Write Event", message:
+                        reason, preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
-        dismiss(animated: true, completion: nil)
         // direct back to main page after adding event
 
         
