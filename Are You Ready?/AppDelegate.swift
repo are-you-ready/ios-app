@@ -13,6 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -40,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error)
         }
         
+        //format nav bar
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.1327746212, green: 0.2588857114, blue: 0.6844621897, alpha: 1)
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14)]
         
         // Override point for customization after application launch.
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
