@@ -53,7 +53,12 @@ class MyEventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        
+        
+        
         formatter.dateStyle = .none
         formatter.timeStyle = .short
         

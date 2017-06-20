@@ -7,12 +7,31 @@
 //
 
 import UIKit
+import UserNotifications
+import UserNotificationsUI
+
 
 class MainViewController: UIViewController {
 
     @IBOutlet weak var createEventButton: UIButton!
     @IBOutlet weak var showGroupButton: UIButton!
     @IBOutlet weak var myEventsButton: UIButton!
+    
+    
+    //#sage: present notification in background
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void){}
+    
+    
+    //#sage: check permission for localized notifications
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        return true
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
