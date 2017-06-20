@@ -196,6 +196,7 @@
                                 </state>
                                 <connections>
                                     <action selector="createEventAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ah3-Cb-mkS"/>
+                                    <segue destination="hRj-ev-LkD" kind="show" id="l3J-pE-uaf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grd-EV-oOm">
@@ -396,7 +397,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-HW-59C">
-                                <rect key="frame" x="20" y="606" width="190" height="55"/>
+                                <rect key="frame" x="20" y="536" width="190" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I'm coming!"/>
                                 <connections>
@@ -439,7 +440,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hto-Eu-4CB">
-                                <rect key="frame" x="218" y="606" width="176" height="55"/>
+                                <rect key="frame" x="218" y="536" width="176" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Not gonna go..."/>
                             </button>
@@ -480,6 +481,386 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ON-wI-WMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-719" y="112"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Lt-8D-g1R">
+            <objects>
+                <navigationController id="hRj-ev-LkD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jzu-A3-DYt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Gf4-rN-V8G" kind="relationship" relationship="rootViewController" id="FhK-jN-uyd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQD-PV-Viq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1235" y="-766"/>
+        </scene>
+        <!--Add Event-->
+        <scene sceneID="Nvl-5z-CRo">
+            <objects>
+                <tableViewController storyboardIdentifier="Add Event" title="Add Event" id="Gf4-rN-V8G" customClass="AddEventTableViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="w79-Ro-vZh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId1" rowHeight="87" id="Zrf-ze-0qP" customClass="Cell1TableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="87"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zrf-ze-0qP" id="YWS-c7-ppK">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wfs-8e-pGb">
+                                            <rect key="frame" x="105" y="3" width="239" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="titleEntered:" destination="Zrf-ze-0qP" eventType="editingDidEnd" id="T07-cv-5nb"/>
+                                            </connections>
+                                        </textField>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j26-dC-KcZ">
+                                            <rect key="frame" x="20" y="51" width="77" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyy-PV-5hv">
+                                            <rect key="frame" x="20" y="8" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCh-na-ec2">
+                                            <rect key="frame" x="105" y="46" width="239" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="locationEntered:" destination="Zrf-ze-0qP" eventType="editingDidEnd" id="TGk-wZ-f9K"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationField" destination="RCh-na-ec2" id="6xG-Vg-h3x"/>
+                                    <outlet property="locationLabel" destination="j26-dC-KcZ" id="hZn-s9-YUn"/>
+                                    <outlet property="titleField" destination="Wfs-8e-pGb" id="wG1-rr-98i"/>
+                                    <outlet property="titleLabel" destination="fyy-PV-5hv" id="hxp-rL-7fz"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId2" rowHeight="117" id="9X8-Fq-OZV" customClass="MeetUpDateTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115" width="414" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9X8-Fq-OZV" id="paK-aW-NyN">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="f78-iG-1Fg">
+                                            <rect key="frame" x="21" y="-1" width="345" height="109"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                            <date key="date" timeIntervalSinceReferenceDate="519343341.348207">
+                                                <!--2017-06-16 22:02:21 +0000-->
+                                            </date>
+                                            <connections>
+                                                <action selector="meetUpDatePicked:" destination="9X8-Fq-OZV" eventType="valueChanged" id="R33-rb-iZJ"/>
+                                            </connections>
+                                        </datePicker>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="meetUpDatePicker" destination="f78-iG-1Fg" id="v91-Xq-Lbn"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId3" rowHeight="155" id="PtZ-cp-hUf" customClass="MeetUpTypeTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="232" width="414" height="155"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PtZ-cp-hUf" id="MQU-5Q-gci">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aeD-S0-gI0">
+                                            <rect key="frame" x="25.000000000000007" y="7" width="117.66666666666667" height="102"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zss-CC-kgh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESU-cg-PqD" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="eatOutPushed:" destination="PtZ-cp-hUf" eventType="touchUpInside" id="9fk-w9-Sff"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="eat out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvq-Bu-sY2">
+                                                            <rect key="frame" x="50.000000000000007" y="0.0" width="53.666666666666679" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qgX-8a-qzx">
+                                                    <rect key="frame" x="0.0" y="34" width="117.66666666666667" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xii-5O-7iN" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="hangOutPushed:" destination="PtZ-cp-hUf" eventType="touchUpInside" id="h0e-g7-lQh"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="hang out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-xr-GCT">
+                                                            <rect key="frame" x="50.000000000000007" y="0.0" width="67.666666666666686" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="47u-jo-NLJ">
+                                                    <rect key="frame" x="0.0" y="68" width="113" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boO-aT-xTY" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="meetUpPushed:" destination="PtZ-cp-hUf" eventType="touchUpInside" id="MoU-Ql-6zm"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="meet up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nx7-Ld-876">
+                                                            <rect key="frame" x="50" y="0.0" width="63" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="eatOutButton" destination="ESU-cg-PqD" id="jo7-Lj-n2S"/>
+                                    <outlet property="hangOutButton" destination="xii-5O-7iN" id="Qti-sS-7fc"/>
+                                    <outlet property="meetUpButton" destination="boO-aT-xTY" id="Kpf-Oj-3Gx"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId4" rowHeight="155" id="b3e-u6-gTH" customClass="MeetSpotTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="387" width="414" height="155"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b3e-u6-gTH" id="QV2-9y-2yd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jea-Qf-bqd">
+                                            <rect key="frame" x="25" y="7" width="134" height="136"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wBm-aS-4yX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="74.333333333333329" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTM-O2-cT1" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="carPushed:" destination="b3e-u6-gTH" eventType="touchUpInside" id="12w-Fp-NgN"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZa-za-yl5">
+                                                            <rect key="frame" x="50" y="0.0" width="24.333333333333329" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="obB-E3-be1">
+                                                    <rect key="frame" x="0.0" y="34" width="126.66666666666667" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9v-TS-de7" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="frontDoorPushed:" destination="b3e-u6-gTH" eventType="touchUpInside" id="L4t-tJ-Xuf"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="front door" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yD-sE-ikQ">
+                                                            <rect key="frame" x="50.000000000000007" y="0.0" width="76.666666666666686" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rG8-0E-lZ5">
+                                                    <rect key="frame" x="0.0" y="68" width="106" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-Lr-GiM" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="kitchenPushed:" destination="b3e-u6-gTH" eventType="touchUpInside" id="Vn0-mb-98G"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="kitchen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpe-on-i4v">
+                                                            <rect key="frame" x="50" y="0.0" width="56" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3ui-7l-ddH">
+                                                    <rect key="frame" x="0.0" y="102" width="134" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUo-cv-Zux" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="livingRoomPushed:" destination="b3e-u6-gTH" eventType="touchUpInside" id="jtl-wP-cEX"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="living room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN2-5g-EBS">
+                                                            <rect key="frame" x="50" y="0.0" width="84" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="carButton" destination="rTM-O2-cT1" id="hjc-us-T51"/>
+                                    <outlet property="frontDoorButton" destination="j9v-TS-de7" id="2H8-EX-WI6"/>
+                                    <outlet property="kitchenButton" destination="h1t-Lr-GiM" id="hN0-V6-pUU"/>
+                                    <outlet property="livingRoomButton" destination="NUo-cv-Zux" id="EyQ-6K-Wmf"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId5" rowHeight="117" id="reF-SR-QaX" customClass="ReadyTimeTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="542" width="414" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="reF-SR-QaX" id="tBZ-yk-OiF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-Rg-KNZ">
+                                            <rect key="frame" x="25" y="7" width="136" height="102"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OJ1-j7-YDe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125.33333333333333" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLz-Uz-33h" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="fiveMinutesPushed:" destination="reF-SR-QaX" eventType="touchUpInside" id="ltk-Dk-hnf"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj9-lc-M4I">
+                                                            <rect key="frame" x="49.999999999999993" y="0.0" width="75.333333333333314" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U8N-gd-6es">
+                                                    <rect key="frame" x="0.0" y="34" width="133.33333333333334" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scD-mX-hWf" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="tenMinutesPushed:" destination="reF-SR-QaX" eventType="touchUpInside" id="dtt-lY-1e9"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="10 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5p-RC-Eg5">
+                                                            <rect key="frame" x="50" y="0.0" width="83.333333333333343" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nkg-P2-4e8">
+                                                    <rect key="frame" x="0.0" y="68" width="136" height="34"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS0-Y9-qE0" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                            <connections>
+                                                                <action selector="thirtyMinutesPushed:" destination="reF-SR-QaX" eventType="touchUpInside" id="KBl-dM-wGr"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="30 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qK-Uf-e4K">
+                                                            <rect key="frame" x="50" y="0.0" width="86" height="34"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fiveMinuteButton" destination="dLz-Uz-33h" id="wFX-Hl-Qyc"/>
+                                    <outlet property="tenMinutesButton" destination="scD-mX-hWf" id="rKm-uI-KHX"/>
+                                    <outlet property="thirtyMinutesButton" destination="bS0-Y9-qE0" id="8FK-vT-Rcv"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId6" rowHeight="117" id="i4y-Ik-4SM" customClass="WhatsUpTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="659" width="414" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i4y-Ik-4SM" id="daQ-37-DjB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vk0-JJ-FXM">
+                                            <rect key="frame" x="0.0" y="-5.4954160056154251" width="414" height="127.99999999999977"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="whatsUpTextView" destination="Vk0-JJ-FXM" id="g0x-6q-CEl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Gf4-rN-V8G" id="iRs-cA-PXq"/>
+                            <outlet property="delegate" destination="Gf4-rN-V8G" id="FYQ-on-dcX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Event" id="pZM-XK-psf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="4Uf-Lb-nXF"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="U3m-Wl-iu1">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="Gf4-rN-V8G" id="RJC-rb-BGY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zf9-hs-30U">
+                            <connections>
+                                <action selector="addButtonPushed:" destination="Gf4-rN-V8G" id="4Yt-bp-gjt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addUIBarButton" destination="zf9-hs-30U" id="AgG-dH-ac3"/>
+                        <outlet property="backUIBarButton" destination="zf9-hs-30U" id="b0v-Kg-Ohw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ebr-ee-h8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943" y="-766"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
