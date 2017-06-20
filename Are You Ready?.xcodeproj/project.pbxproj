@@ -20,7 +20,6 @@
 		4FE11FC21EF48D61005060E2 /* MeetUpDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FC11EF48D61005060E2 /* MeetUpDateTableViewCell.swift */; };
 		4FE11FC41EF493C1005060E2 /* WhatsUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE11FC31EF493C1005060E2 /* WhatsUpTableViewCell.swift */; };
 		AF34FFEA1ECCC43400029391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34FFE91ECCC43400029391 /* AppDelegate.swift */; };
-		AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34FFEB1ECCC43400029391 /* ViewController.swift */; };
 		AF34FFEF1ECCC43400029391 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF34FFED1ECCC43400029391 /* Main.storyboard */; };
 		AF34FFF11ECCC43400029391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF34FFF01ECCC43400029391 /* Assets.xcassets */; };
 		AF34FFF41ECCC43400029391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF34FFF21ECCC43400029391 /* LaunchScreen.storyboard */; };
@@ -52,7 +51,6 @@
 		4FE11FC31EF493C1005060E2 /* WhatsUpTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhatsUpTableViewCell.swift; sourceTree = "<group>"; };
 		AF34FFE61ECCC43400029391 /* Are You Ready?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Are You Ready?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF34FFE91ECCC43400029391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF34FFEB1ECCC43400029391 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF34FFEE1ECCC43400029391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF34FFF01ECCC43400029391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF34FFF31ECCC43400029391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,7 +63,7 @@
 		AF463E171EF8C28600942244 /* MyToRespondEventsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyToRespondEventsDetailViewController.swift; sourceTree = "<group>"; };
 		AF463E191EF8E0EF00942244 /* MyGetReadyEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGetReadyEventsTableViewCell.swift; sourceTree = "<group>"; };
 		AF463E1B1EF8E70700942244 /* MyGetReadyEventsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGetReadyEventsDetailViewController.swift; sourceTree = "<group>"; };
-		AF463E211EF9B30200942244 /* MyGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyGroupTableViewCell.swift; path = ../MyGroupTableViewCell.swift; sourceTree = "<group>"; };
+		AF463E211EF9B30200942244 /* MyGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupTableViewCell.swift; sourceTree = "<group>"; };
 		AF61D4761EF228E100063168 /* AYREvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYREvent.swift; sourceTree = "<group>"; };
 		AF61D4781EF32D4B00063168 /* AYRJsonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRJsonError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,23 +100,15 @@
 			isa = PBXGroup;
 			children = (
 				AF9C722E1ECE1A210059CEB0 /* structures */,
+				AFFF4BB11EF9CEC700FAA361 /* CreateEvent */,
 				AF463E1D1EF8E73F00942244 /* MyEvents */,
 				AF463E201EF9B16300942244 /* MyGroup */,
 				AF34FFE91ECCC43400029391 /* AppDelegate.swift */,
-				AF34FFEB1ECCC43400029391 /* ViewController.swift */,
-				AF34FFED1ECCC43400029391 /* Main.storyboard */,
-				4FE11FBF1EF4891C005060E2 /* ReadyTimeTableViewCell.swift */,
-				4FE11FB51EF2FF63005060E2 /* Cell1TableViewCell.swift */,
-				4FE11FBB1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift */,
-				4FE11FBD1EF379D9005060E2 /* MeetSpotTableViewCell.swift */,
-				4FE11FB31EF2F9AB005060E2 /* AddEventTableViewController.swift */,
-				4FE11FC31EF493C1005060E2 /* WhatsUpTableViewCell.swift */,
-				4FE11FC11EF48D61005060E2 /* MeetUpDateTableViewCell.swift */,
-				4FE11FB91EF34766005060E2 /* RadioButton.swift */,
 				4FE11FB11EF2062E005060E2 /* MainViewController.swift */,
 				4FE11FA81EF1DACF005060E2 /* LoginViewController.swift */,
 				AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */,
 				AF34FFF01ECCC43400029391 /* Assets.xcassets */,
+				AF34FFED1ECCC43400029391 /* Main.storyboard */,
 				AF34FFF21ECCC43400029391 /* LaunchScreen.storyboard */,
 				AF34FFF51ECCC43400029391 /* Info.plist */,
 			);
@@ -156,6 +146,21 @@
 			);
 			name = structures;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		AFFF4BB11EF9CEC700FAA361 /* CreateEvent */ = {
+			isa = PBXGroup;
+			children = (
+				4FE11FB31EF2F9AB005060E2 /* AddEventTableViewController.swift */,
+				4FE11FB51EF2FF63005060E2 /* Cell1TableViewCell.swift */,
+				4FE11FC11EF48D61005060E2 /* MeetUpDateTableViewCell.swift */,
+				4FE11FBB1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift */,
+				4FE11FBD1EF379D9005060E2 /* MeetSpotTableViewCell.swift */,
+				4FE11FBF1EF4891C005060E2 /* ReadyTimeTableViewCell.swift */,
+				4FE11FC31EF493C1005060E2 /* WhatsUpTableViewCell.swift */,
+				4FE11FB91EF34766005060E2 /* RadioButton.swift */,
+			);
+			name = CreateEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +245,6 @@
 				AF61D4791EF32D4B00063168 /* AYRJsonError.swift in Sources */,
 				4FE11FA91EF1DACF005060E2 /* LoginViewController.swift in Sources */,
 				AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */,
-				AF34FFEC1ECCC43400029391 /* ViewController.swift in Sources */,
 				AF463E1C1EF8E70700942244 /* MyGetReadyEventsDetailViewController.swift in Sources */,
 				4FE11FBE1EF379D9005060E2 /* MeetSpotTableViewCell.swift in Sources */,
 				AF34FFEA1ECCC43400029391 /* AppDelegate.swift in Sources */,
