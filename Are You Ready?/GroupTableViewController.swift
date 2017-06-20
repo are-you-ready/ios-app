@@ -9,9 +9,33 @@
 import UIKit
 
 class GroupTableViewController: UITableViewController {
-
+    
+    var names:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Group cis55"
+        
+        AreYouReadyAPI.getGroup("cis55") { result in
+            switch (result) {
+            case let .success(group):
+                print(group.name)
+                DispatchQueue.main.async {
+                    for user in group.users {
+                        print (user.value.name)
+                        self.names.append(user.value.name)
+                    }
+                    //MyTextLabel.text = user.name
+                    self.tableView.reloadData()
+                }
+
+            case let .failure(.requestFailure(reason, _)),
+                 let .failure(.JSONParseFailure(reason)),
+                 let .failure(.JSONErrorResponse(reason, _)):
+                print("Request failed because: \(reason)")
+            }
+        }
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -34,14 +58,14 @@ class GroupTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.names.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupViewCell", for: indexPath) as! GroupTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = "Scott"
+        cell.groupMemberName!.text = self.names[indexPath.row]
         return cell
     }
 

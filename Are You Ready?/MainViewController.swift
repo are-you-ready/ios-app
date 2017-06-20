@@ -43,25 +43,6 @@ class MainViewController: UIViewController {
     }
 
     @IBAction func showGroupAction(_ sender: Any) {
-        /*
-        AreYouReadyAPI.getGroup(name: "cis55") { (result) in
-            switch (result) {
-            case let .success(group):
-                print(group.name)
-                print(group.users)
-                self.performSegue(withIdentifier: "MainToGroupView", sender: nil)
-                //DispatchQueue.main.async {
-                //    //MyTextLabel.text = user.name
-                //    print("hello")
-                //}
-            // let cis55: AYRGroup = user.groups["cis55"]
-            case let .failure(.requestFailure(reason, _)),
-                 let .failure(.JSONParseFailure(reason)),
-                 let .failure(.JSONErrorResponse(reason, _)):
-                print("Request failed because \(reason)")
-            }
-        }
-        */
     }
     
     @IBAction func myEventsAction(_ sender: Any) {
