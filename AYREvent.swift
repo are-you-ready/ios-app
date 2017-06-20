@@ -80,6 +80,7 @@ class AYREvent {
     }
     
     init?(fromJSON json: Any?) {
+        print(0)
         guard let json = json as? [String: Any],
               let jsonName = json["name"] as? String,
               let jsonType = json["type"] as? String,
@@ -94,7 +95,7 @@ class AYREvent {
         else {
             return nil
         }
-
+        print(1)
         let type = EventType(rawValue: jsonType)
         let meetupLocation = EventMeetupLocation(rawValue: jsonMeetupLocation)
         
@@ -102,7 +103,7 @@ class AYREvent {
         else {
             return nil
         }
-
+        print(2)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 
@@ -112,7 +113,7 @@ class AYREvent {
         else {
             return nil
         }
-
+        print(2)
         var attendees = [String: AYRAttendee]()
         for jsonAttendee in jsonAttendees {
             if let attendee = AYRAttendee(fromJSON: jsonAttendee) {
@@ -121,7 +122,7 @@ class AYREvent {
                 return nil
             }
         }
-
+        print(3)
         self.name = jsonName
         self.type = type
         self.description = jsonDescription
