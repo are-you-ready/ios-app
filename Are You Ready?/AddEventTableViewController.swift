@@ -82,18 +82,18 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
         
         let description = whatsUpText
         
-        var readySeconds = 5
+        var readyMinutes = 5
         if readyTimeSelectionIndex == 1 {
-            readySeconds = 10
+            readyMinutes = 10
         }
         else {
             if readyTimeSelectionIndex == 2 {
-                readySeconds = 30
+                readyMinutes = 30
             }
         }
         
         let calendar = Calendar.current
-        let readyTime = calendar.date(byAdding: .second, value: (readySeconds * -1), to: eventDate)
+        let readyTime = calendar.date(byAdding: .second, value: (readyMinutes * -1 * 60), to: eventDate)
         
         /*
         let event = AYREvent(
@@ -109,7 +109,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             attendees: [:]     // This value will also be auto-populated by the server
         )
         */
-user = "Markus"
+
         let event = AYREvent(
             name: eventTitle,
             type: eventType,

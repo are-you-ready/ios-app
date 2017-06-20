@@ -563,6 +563,18 @@
                                     <segue destination="iZB-LI-JYi" kind="show" id="xpX-Ex-smq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grd-EV-oOm">
+                                <rect key="frame" x="17" y="686" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are [name] in [group]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CO-ph-vSu">
+                                <rect key="frame" x="103" y="691" width="291" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.23529411764705882" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -571,6 +583,7 @@
                         <outlet property="createEventButton" destination="WDf-lh-ryA" id="9yb-zc-709"/>
                         <outlet property="myEventsButton" destination="bUH-Ce-vKh" id="4vr-gW-7iB"/>
                         <outlet property="showGroupButton" destination="bPg-FQ-xec" id="Dae-fe-ONr"/>
+                        <outlet property="whoAmILabel" destination="8CO-ph-vSu" id="PDm-8z-0Vi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

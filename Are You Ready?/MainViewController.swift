@@ -7,17 +7,37 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
 
+    var user = ""
+    
     @IBOutlet weak var createEventButton: UIButton!
     @IBOutlet weak var showGroupButton: UIButton!
     @IBOutlet weak var myEventsButton: UIButton!
-    
+    @IBOutlet weak var whoAmILabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var fetchResultsController: NSFetchedResultsController<Login>!
+        let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
+        fetchRequest.sortDescriptors = []
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            do {
+                try fetchResultsController.performFetch()
+                if let fetchedObjects = fetchResultsController.fetchedObjects{
+                    user = fetchedObjects[0].id!
+                }
+            } catch {
+                print(error)
+            }
+        }
+        
+        whoAmILabel.text = "You are \(user)"
     }
 
     override func didReceiveMemoryWarning() {

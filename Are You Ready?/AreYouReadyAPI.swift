@@ -24,7 +24,8 @@ enum APIResult<Type> {
 
 // Change this URL to change where API requests are sent. Change it to "http://localhost:3000" to use your local server, but localhost will not work if your build target is an iOS device (not an iOS Simulator). In that case, use the internal IP address (eg. "http://192.168.1.62:3000"). Please do not commit this line as anything other than "http://ayr.pf-n.co".
 let BASE_API_URL = URL(string: "http://ayr.pf-n.co")!
-let GROUP_NAME = "cis55"
+let GROUP_NAME: String? = "cis55"
+let USER_NAME: String? = "Ryan"
 
 let session = URLSession.shared
 
@@ -124,7 +125,7 @@ class AreYouReadyAPI {
         - completionHandler: The completion handler to call when the request is complete. The completion handler takes a single parameter `result`.
      */
     static func getGroup(_ groupName: String, completionHandler: @escaping (APIResult<AYRGroup>) -> Void) {
-        let groupName = GROUP_NAME.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        let groupName = (GROUP_NAME ?? groupName).addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
 
         jsonGet("/api/group/\(groupName)") { json, error in
             if let error = error {
@@ -150,7 +151,7 @@ class AreYouReadyAPI {
      */
     static func createUser(_ userName: String, inGroup groupName: String, completionHandler: @escaping (APIResult<AYRGroup>) -> Void) {
         let json: [String: Any] = ["userName": userName]
-        let groupName = GROUP_NAME.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        let groupName = (GROUP_NAME ?? groupName).addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
 
         jsonPost("/api/group/\(groupName)/users", body: json) { json, error in
             if let error = error {
@@ -202,7 +203,7 @@ class AreYouReadyAPI {
      
      - Parameters:
      - event: The event to create. Note that `createdAt` and `attendees` are ignored.
-     - groupName: The gr
+     - groupName: The group name to query
      - completionHandler: The completion handler to call when the request is complete. The completion handler takes a single parameter `result`.
      */
     static func createEvent(_ event: AYREvent, inGroup groupName: String, completionHandler: @escaping (APIResult<AYRGroup>) -> Void) {
@@ -212,11 +213,11 @@ class AreYouReadyAPI {
             "description": event.description,
             "location": event.location,
             "meetupLocation": event.meetupLocation!.rawValue,
-            "createdBy": event.createdBy.name,
+            "createdBy": USER_NAME ?? event.createdBy.name,
             "notificationTime": event.notificationTime.timeIntervalSince1970 * 1000,
             "readyTime": event.readyTime.timeIntervalSince1970 * 1000
         ]
-        let groupName = GROUP_NAME.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        let groupName = (GROUP_NAME ?? groupName).addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
 
         jsonPost("/api/group/\(groupName)/events", body: json) { json, error in
             if let error = error {
@@ -262,10 +263,10 @@ class AreYouReadyAPI {
      */
     static func updateStatus(group groupName: String, event eventName: String, user userName: String, status: AttendeeStatus, completionHandler: @escaping (APIResult<AYRGroup>) -> Void) {
         let json: [String: Any] = [
-            "userName": userName,
+            "userName": USER_NAME ?? userName,
             "eventStatus": status.rawValue
         ]
-        let groupName = GROUP_NAME.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        let groupName = (GROUP_NAME ?? groupName).addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
         let eventName = eventName.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
         
         jsonPost("/api/group/\(groupName)/event/\(eventName)/status", body: json) { json, error in
