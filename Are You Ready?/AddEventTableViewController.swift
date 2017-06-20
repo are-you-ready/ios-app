@@ -109,7 +109,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             attendees: [:]     // This value will also be auto-populated by the server
         )
         */
-
+user = "Markus"
         let event = AYREvent(
             name: eventTitle,
             type: eventType,

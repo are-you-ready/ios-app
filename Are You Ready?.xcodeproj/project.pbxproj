@@ -27,6 +27,8 @@
 		AF34FFFC1ECCC9DA00029391 /* AreYouReadyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */; };
 		AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589B1EE610EC00EB4919 /* AYRUser.swift */; };
 		AF3A589E1EE6116200EB4919 /* AYRGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3A589D1EE6116200EB4919 /* AYRGroup.swift */; };
+		AF463E141EF786FA00942244 /* MyEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E131EF786FA00942244 /* MyEventsTableViewController.swift */; };
+		AF463E161EF7877600942244 /* MyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF463E151EF7877600942244 /* MyEventsTableViewCell.swift */; };
 		AF61D4771EF228E100063168 /* AYREvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D4761EF228E100063168 /* AYREvent.swift */; };
 		AF61D4791EF32D4B00063168 /* AYRJsonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61D4781EF32D4B00063168 /* AYRJsonError.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 		AF34FFFB1ECCC9DA00029391 /* AreYouReadyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreYouReadyAPI.swift; sourceTree = "<group>"; };
 		AF3A589B1EE610EC00EB4919 /* AYRUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRUser.swift; sourceTree = "<group>"; };
 		AF3A589D1EE6116200EB4919 /* AYRGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRGroup.swift; sourceTree = "<group>"; };
+		AF463E131EF786FA00942244 /* MyEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsTableViewController.swift; sourceTree = "<group>"; };
+		AF463E151EF7877600942244 /* MyEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventsTableViewCell.swift; sourceTree = "<group>"; };
 		AF61D4761EF228E100063168 /* AYREvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYREvent.swift; sourceTree = "<group>"; };
 		AF61D4781EF32D4B00063168 /* AYRJsonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AYRJsonError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +97,8 @@
 				AF34FFE91ECCC43400029391 /* AppDelegate.swift */,
 				AF34FFEB1ECCC43400029391 /* ViewController.swift */,
 				AF34FFED1ECCC43400029391 /* Main.storyboard */,
+				AF463E151EF7877600942244 /* MyEventsTableViewCell.swift */,
+				AF463E131EF786FA00942244 /* MyEventsTableViewController.swift */,
 				4FE11FBF1EF4891C005060E2 /* ReadyTimeTableViewCell.swift */,
 				4FE11FB51EF2FF63005060E2 /* Cell1TableViewCell.swift */,
 				4FE11FBB1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift */,
@@ -199,6 +205,7 @@
 			files = (
 				4FE11FB61EF2FF63005060E2 /* Cell1TableViewCell.swift in Sources */,
 				4FE11FC41EF493C1005060E2 /* WhatsUpTableViewCell.swift in Sources */,
+				AF463E161EF7877600942244 /* MyEventsTableViewCell.swift in Sources */,
 				4FE11FBC1EF3708C005060E2 /* MeetUpTypeTableViewCell.swift in Sources */,
 				4FE11FB41EF2F9AB005060E2 /* AddEventTableViewController.swift in Sources */,
 				AF61D4791EF32D4B00063168 /* AYRJsonError.swift in Sources */,
@@ -211,6 +218,7 @@
 				4FE11FBA1EF34766005060E2 /* RadioButton.swift in Sources */,
 				4FE11FAC1EF1DD96005060E2 /* Are You Ready?.xcdatamodeld in Sources */,
 				4FE11FAE1EF1ED65005060E2 /* GroupTableViewController.swift in Sources */,
+				AF463E141EF786FA00942244 /* MyEventsTableViewController.swift in Sources */,
 				4FE11FC21EF48D61005060E2 /* MeetUpDateTableViewCell.swift in Sources */,
 				4FE11FB21EF2062E005060E2 /* MainViewController.swift in Sources */,
 				AF3A589C1EE610EC00EB4919 /* AYRUser.swift in Sources */,
