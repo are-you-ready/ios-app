@@ -9,6 +9,20 @@
 import UIKit
 import CoreData
 
+// Put this piece of code anywhere you like
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
 class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate, MeetSpotCellDelegate, ReadyTimeCellDelegate, IdCellDelegate, WhatsUpCellDelegate, MeetUpDateCellDelegate {
     @IBOutlet weak var backUIBarButton: UIBarButtonItem!
     @IBOutlet weak var addUIBarButton: UIBarButtonItem!
@@ -58,70 +72,44 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
         let eventLocation = locationText
         let eventDate: Date = meetUpDate
         
-        var eventType: EventType
+        var eventType: EventType?
         switch meetUpTypeSelectionIndex {
         case 0: eventType = .eatOut
         case 1: eventType = .hangOut
         case 2: eventType = .meetUp
         default:
-            print("You shouldn't be here")
-            eventType = .eatOut
+            eventType = nil
         }
         
-        var meetUpLocation: EventMeetupLocation
+        var meetUpLocation: EventMeetupLocation?
         switch meetUpSpotSelectionIndex {
         case 0: meetUpLocation = .car
         case 1: meetUpLocation = .frontDoor
         case 2: meetUpLocation = .kitchen
         case 3: meetUpLocation = .livingRoom
         default:
-            print("You shouldn't be here")
-            meetUpLocation = .car
+            meetUpLocation = nil
         }
         
         let description = whatsUpText
         
-        var readyMinutes: Int
+        var readyMinutes: Int?
         switch readyTimeSelectionIndex {
         case 0: readyMinutes = 5
         case 1: readyMinutes = 10
         case 2: readyMinutes = 30
         default:
-            print("You shouldn't be here")
-            readyMinutes = 5
+            readyMinutes = nil
         }
         
-        let calendar = Calendar.current
-        let readyTime = calendar.date(byAdding: .second, value: (readyMinutes * -1 * 60), to: eventDate)
+        
+        
+        
+
         
         if (eventTitle) == "" {
             let alertController = UIAlertController(title: "Failed to Write Event", message:
                 "No Title Entered", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-            return
-        }
-        if (eventType) == "" {
-            
-            let alertController = UIAlertController(title: "Failed to Write Event", message:
-                "No Type Entered", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-            return
-        }
-        if (description) == "" {
-            let alertController = UIAlertController(title: "Failed to Write Event", message:
-                "No Description Entered", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            
-            self.present(alertController, animated: true, completion: nil)
-            return
-        }
-        if (eventLocation) == "" {
-            let alertController = UIAlertController(title: "Failed to Write Event", message:
-                "No Location Selected", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
@@ -135,8 +123,46 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             self.present(alertController, animated: true, completion: nil)
             return
         }
-
+        let calendar = Calendar.current
+        let readyTime = calendar.date(byAdding: .second, value: (readyMinutes! * -1 * 60), to: eventDate)
         
+        if (readyTime) == nil {
+            
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "Event Time not Valid", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+
+        }
+        if (eventType) == nil {
+            
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "No Type Entered", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+                        if (eventLocation) == "" {
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "No Location Selected", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
+        if (description) == "" {
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "No Description Entered", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+
         let event = AYREvent(
             name: eventTitle,
             type: eventType,
@@ -173,6 +199,8 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
                 }
             }
         }
+        
+        
     }
     
     override func viewDidLoad() {
@@ -180,6 +208,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+         self.hideKeyboardWhenTappedAround()
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
