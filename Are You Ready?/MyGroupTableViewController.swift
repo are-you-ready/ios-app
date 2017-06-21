@@ -6,15 +6,17 @@ class MyGroupTableViewController: UITableViewController {
 
     func handleRefresh() {
         AreYouReadyAPI.getGroup("cis55") { result in
+            self.groupMembers = []
+
             switch (result) {
             case let .success(group):
                 print("#getGroup success: \(group.name)")
                 self.groupMembers = Array(group.users.values)
                 self.tableView.reloadData()
+
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
-                self.groupMembers = []
                 print("#getGroup failure: \(reason)")
             }
 

@@ -8,7 +8,7 @@ class MyToRespondEventsDetailViewController: UIViewController {
     var mediumFormatter = DateFormatter()
     var shortFormatter = DateFormatter()
     var user = ""
-    
+
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var time: UILabel!
@@ -21,55 +21,55 @@ class MyToRespondEventsDetailViewController: UIViewController {
         AreYouReadyAPI.updateStatus(group: "cis55", event: myEvent!.name, user: user, status: .coming) { result in
             switch (result) {
             case let .success(group):
-                print(group.name)
-                let notificationTime = group.events[self.myEvent!.name]?.notificationTime
-                let diff = notificationTime!.timeIntervalSince(Date())
-                //#sage: check num to confirm non-negative
-                print(diff)
+                print("#updateStatus success: \(group.name)")
+                let notificationTime = group.events[self.myEvent!.name]!.notificationTime
+                let diff = notificationTime.timeIntervalSince(Date())
                 self.setNotification(time: diff)
+
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
-                print("Request failed because: \(reason)")
+                print("#updateStatus failure: \(reason)")
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Failed to get group", message:
+                        reason, preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
     }
-    
+
     func setNotification(time: Double) {
         if time <= 0 {
             return
         }
 
         let content = UNMutableNotificationContent()
-        
+
         content.title = myEvent!.name
         content.body = myEvent!.location + " at " + shortFormatter.string(from: myEvent!.readyTime)
-        
-        
+
+
         content.sound = UNNotificationSound.default()
-        
-        //#sage: time interval = time of date minus time of notification in seconds
+
+        // time interval = time of date minus time of notification in seconds
         let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: time, repeats: false)
         let request = UNNotificationRequest.init(identifier: "test_name", content: content, trigger: trigger)
-        
-        //#sage: add notification to stack
+
+        // add notification to stack
         let center = UNUserNotificationCenter.current()
-        center.add(request) { (error) in
+        center.add(request) { error in
             if let error = error {
-                print(error)
+                print(error.localizedDescription)
             }
         }
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-        }
-    
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mediumFormatter.dateStyle = .medium
@@ -77,35 +77,29 @@ class MyToRespondEventsDetailViewController: UIViewController {
         shortFormatter.dateStyle = .none
         shortFormatter.timeStyle = .short
 
-
-        //#Markus: see if we can read the core data
         var fetchResultsController: NSFetchedResultsController<Login>!
         let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
-        //let sortDescriptor = NSSortDescriptor(key: "iItem", ascending: true)
         fetchRequest.sortDescriptors = []
-        //#Markus: let defaultReturn: [LoginId] = []
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let context = appDelegate.persistentContainer.viewContext
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            //fetchResultsController.delegate = self as! NSFetchedResultsControllerDelegate
-            do{
+            do {
                 try fetchResultsController.performFetch()
                 if let fetchedObjects = fetchResultsController.fetchedObjects{
                     user = fetchedObjects[0].id!
                 }
             } catch {
-                print(error)
+                print(error.localizedDescription)
             }
         }
-        
-        //#Markus:  Do any additional setup after loading the view.
+
         eventName.text = myEvent?.name
         location.text = myEvent?.location
         time.text = mediumFormatter.string(from: myEvent!.readyTime)
         meetupSpot.text = myEvent?.meetupLocation?.rawValue
         whatsUp.text = myEvent?.description
         notificationTime.text = shortFormatter.string(from: myEvent!.notificationTime)
-        
+
         var whosComingText = ""
         for attendee in Array(myEvent!.attendees.values) {
             switch attendee.status {
@@ -117,12 +111,12 @@ class MyToRespondEventsDetailViewController: UIViewController {
                 whosComingText += "\(attendee.user.name): Is NOT coming :(\n"
             }
         }
-        
+
         whosComing.text = whosComingText
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+
 }

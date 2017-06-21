@@ -1,41 +1,57 @@
-//
-//  MyGetReadyEventsDetailView.swift
-//  Are You Ready?
-//
-//  Created by Markus Tran on 6/19/17.
-//  Copyright © 2017 Markus Tran. All rights reserved.
-//
-
 import UIKit
 
 class MyGetReadyEventsDetailViewController: UIViewController {
 
     var timer: Timer? = nil
     var myEvent: AYREvent? = nil
-    var seconds_left: TimeInterval = 1
-    
+    var secondsLeft: TimeInterval = 1
+    var user = ""
+
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var whosReady: UITextView!
     @IBOutlet weak var timer_label: UILabel!
-    
+
     @IBAction func pressReady(_ sender: Any) {
-        AreYouReadyAPI.updateStatus(group: "cis55", event: myEvent!.name, user: "Markus", status: .ready) { result in
+        AreYouReadyAPI.updateStatus(group: "cis55", event: myEvent!.name, user: user, status: .ready) { result in
             switch (result) {
             case let .success(group):
-                print(group.name)
+                print("#updateStatus success: \(group.name)")
+
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
-                print("Request failed because: \(reason)")
+                print("#updateStatus failure: \(reason)")
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Failed to update status", message:
+                        reason, preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        eventName.text = myEvent?.name
-        
+
+        var fetchResultsController: NSFetchedResultsController<Login>!
+        let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
+        fetchRequest.sortDescriptors = []
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            do {
+                try fetchResultsController.performFetch()
+                if let fetchedObjects = fetchResultsController.fetchedObjects{
+                    user = fetchedObjects[0].id!
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+
+        eventName.text = myEvent!.name
+
         var whosReadyText = ""
         for attendee in Array(myEvent!.attendees.values) {
             switch attendee.status {
@@ -46,17 +62,16 @@ class MyGetReadyEventsDetailViewController: UIViewController {
             }
         }
         whosReady.text = whosReadyText
-        
+
         let readyTime = myEvent!.readyTime
-        seconds_left = readyTime.timeIntervalSince(Date())
-        if (seconds_left >= 0) {
+        secondsLeft = readyTime.timeIntervalSince(Date())
+        if (secondsLeft >= 0) {
             runTimer()
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func timeString(time: TimeInterval) -> String {
@@ -65,20 +80,19 @@ class MyGetReadyEventsDetailViewController: UIViewController {
         let seconds = Int(time) % 60
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
-    
+
     func updateTimer() {
-        seconds_left -= 1
-        if seconds_left > 0 {
-            timer_label.text = timeString(time: seconds_left)
+        secondsLeft -= 1
+        if secondsLeft > 0 {
+            timer_label.text = timeString(time: secondsLeft)
         } else {
             timer_label.text = "00:00:00"
             timer!.invalidate()
         }
     }
-    
+
     func runTimer() {
-        updateTimer()
-        
+        updateTimer() // Run the function immediately as well
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(MyGetReadyEventsDetailViewController.updateTimer)), userInfo: nil, repeats: true)
     }
 }

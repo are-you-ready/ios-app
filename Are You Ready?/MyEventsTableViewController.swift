@@ -17,6 +17,8 @@ class MyEventsTableViewController: UITableViewController {
                 print("#getGroup success: \(group.name)")
 
                 for event in group.events {
+                    // event should belong in myToRespondEvents if there is at least one attendee who hasn't responded.
+                    // otherwise, it goes in myGetReadyEvents
                     var hasNotResponded = false
                     for attendee in event.value.attendees {
                         if attendee.value.status == .pending {
@@ -34,6 +36,13 @@ class MyEventsTableViewController: UITableViewController {
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
                 print("#getGroup failure: \(reason)")
+
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Failed to get group", message:
+                        reason, preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
 
             self.tableView.reloadData()
@@ -66,7 +75,8 @@ class MyEventsTableViewController: UITableViewController {
         case 1:
             return myGetReadyEvents.count
         default:
-            print("This Shouldn't Exist")
+            // There are only 2 sections... ever
+            print("You shouldn't be here")
             return 0
         }
     }
@@ -94,6 +104,7 @@ class MyEventsTableViewController: UITableViewController {
             return cell
 
         default:
+            // There are only 2 sections... ever
             print("You shouldn't be here")
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyEventsCell", for: indexPath)
             return cell
@@ -107,7 +118,8 @@ class MyEventsTableViewController: UITableViewController {
         case 1:
             return "Are you ready?"
         default:
-            print("This Shouldn't Exist")
+            // There are only 2 sections... ever
+            print("You shouldn't be here")
             return nil
         }
     }
@@ -125,6 +137,7 @@ class MyEventsTableViewController: UITableViewController {
             viewController.myEvent = myGetReadyEvents[self.tableView.indexPath(for: cell)!.row]
 
         default:
+            // There are no other segue names from this VC
             print("You shouldn't be here")
         }
     }

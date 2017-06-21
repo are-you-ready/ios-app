@@ -14,12 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         var firstViewController = "Login"
-        
+
         //see if we can read the core data
         var fetchResultsController: NSFetchedResultsController<Login>!
         let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
@@ -40,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print(error)
         }
-        
+
         //format nav bar
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.07058823529, green: 0.2352941176, blue: 0.5215686275, alpha: 1)
         UINavigationBar.appearance().tintColor = .white
@@ -78,9 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
+
     // MARK: - Core Data stack
-    
+
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -93,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                
+
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -107,9 +105,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-    
+
     // MARK: - Core Data Saving support
-    
+
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -124,4 +122,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 }
-
