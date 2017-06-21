@@ -127,16 +127,24 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             switch (result) {
             case let .success(group):
                 print(group.name)
+                DispatchQueue.main.async {
+                    // direct back to main page after adding event
+                    self.dismiss(animated: true, completion: nil)
+                }
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
                 print("Request failed because: \(reason)")
+                DispatchQueue.main.async {
+                    //failed to write, issue alert
+                    let alertController = UIAlertController(title: "Failed to Write Event", message:
+                        reason, preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
-        dismiss(animated: true, completion: nil)
-        // direct back to main page after adding event
-
-        
     }
     
     override func viewDidLoad() {
