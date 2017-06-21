@@ -6,6 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -352,98 +355,127 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eag-nm-StA">
-                                <rect key="frame" x="20" y="20" width="375" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eag-nm-StA">
+                                <rect key="frame" x="20" y="63" width="375" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61P-hq-vNa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61P-hq-vNa">
                                 <rect key="frame" x="111" y="119" width="284" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meetup Spot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8n-Uo-DKl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meetup Spot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8n-Uo-DKl">
                                 <rect key="frame" x="111" y="148" width="283" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="283" id="dMm-8Y-Hkw"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f3-Hw-ILK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6f3-Hw-ILK">
                                 <rect key="frame" x="111" y="91" width="284" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="What's up" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-RM-2gf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="What's up" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-RM-2gf">
                                 <rect key="frame" x="20" y="195" width="374" height="183"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notification Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdh-Eb-Bjf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdh-Eb-Bjf">
                                 <rect key="frame" x="174" y="386" width="151" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="VyR-Qf-4HY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-HW-59C">
-                                <rect key="frame" x="20" y="536" width="190" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEf-op-Pan">
+                                <rect key="frame" x="20" y="91" width="71" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I05-e1-cC1">
+                                <rect key="frame" x="20" y="120" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-iw-h2o">
+                                <rect key="frame" x="20" y="149" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please respond by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-fc-6x9">
+                                <rect key="frame" x="20" y="386" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Who's coming?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Igc-Pr-9AJ">
+                                <rect key="frame" x="20" y="415" width="374" height="113"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGL-HW-59C">
+                                <rect key="frame" x="112" y="536" width="190" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="WeT-DJ-nMg"/>
+                                </constraints>
                                 <state key="normal" title="I'm coming!"/>
                                 <connections>
                                     <action selector="pressComing:" destination="xRd-yv-zOs" eventType="touchUpInside" id="yhm-97-9kz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEf-op-Pan">
-                                <rect key="frame" x="20" y="91" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I05-e1-cC1">
-                                <rect key="frame" x="20" y="120" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meet at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-iw-h2o">
-                                <rect key="frame" x="20" y="149" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please respond by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-fc-6x9">
-                                <rect key="frame" x="20" y="386" width="146" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Who's coming?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Igc-Pr-9AJ">
-                                <rect key="frame" x="20" y="415" width="374" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hto-Eu-4CB">
-                                <rect key="frame" x="218" y="536" width="176" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Not gonna go..."/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h8n-Uo-DKl" firstAttribute="leading" secondItem="61P-hq-vNa" secondAttribute="leading" id="05N-cu-cHD"/>
+                            <constraint firstItem="3bE-fc-6x9" firstAttribute="top" secondItem="KmN-RM-2gf" secondAttribute="bottom" constant="8" symbolic="YES" id="1vL-SW-ONz"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="top" secondItem="zdh-Eb-Bjf" secondAttribute="bottom" constant="8" symbolic="YES" id="6uo-YI-4ST"/>
+                            <constraint firstItem="I05-e1-cC1" firstAttribute="top" secondItem="kEf-op-Pan" secondAttribute="bottom" constant="8" symbolic="YES" id="7ON-xy-KN9"/>
+                            <constraint firstItem="6f3-Hw-ILK" firstAttribute="centerY" secondItem="kEf-op-Pan" secondAttribute="centerY" id="7ja-WE-JAg"/>
+                            <constraint firstItem="kEf-op-Pan" firstAttribute="top" secondItem="eag-nm-StA" secondAttribute="bottom" constant="8" symbolic="YES" id="DaG-Rz-dAC"/>
+                            <constraint firstItem="0a9-iw-h2o" firstAttribute="top" secondItem="I05-e1-cC1" secondAttribute="bottom" constant="8" symbolic="YES" id="DeQ-aa-KXW"/>
+                            <constraint firstItem="h8n-Uo-DKl" firstAttribute="centerX" secondItem="6f3-Hw-ILK" secondAttribute="centerX" id="Gjh-VG-J9g"/>
+                            <constraint firstItem="3bE-fc-6x9" firstAttribute="baseline" secondItem="zdh-Eb-Bjf" secondAttribute="baseline" id="GlL-WG-1k2"/>
+                            <constraint firstItem="cGL-HW-59C" firstAttribute="centerX" secondItem="F9O-g5-u0o" secondAttribute="centerX" id="JKP-dO-CWk"/>
+                            <constraint firstItem="h8n-Uo-DKl" firstAttribute="top" secondItem="61P-hq-vNa" secondAttribute="bottom" constant="8" symbolic="YES" id="JtV-bu-GO6"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="leading" secondItem="I05-e1-cC1" secondAttribute="leading" id="NpB-1w-X82"/>
+                            <constraint firstItem="61P-hq-vNa" firstAttribute="top" secondItem="6f3-Hw-ILK" secondAttribute="bottom" constant="8" symbolic="YES" id="PkH-Ae-jSe"/>
+                            <constraint firstItem="6f3-Hw-ILK" firstAttribute="firstBaseline" secondItem="kEf-op-Pan" secondAttribute="baseline" id="WQ4-3a-40H"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="leading" secondItem="eag-nm-StA" secondAttribute="leading" id="YSy-Mm-xAe"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="leading" secondItem="0a9-iw-h2o" secondAttribute="leading" id="bBE-36-b2O"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="leading" secondItem="kEf-op-Pan" secondAttribute="leading" id="bJS-SB-FJR"/>
+                            <constraint firstItem="h8n-Uo-DKl" firstAttribute="centerX" secondItem="61P-hq-vNa" secondAttribute="centerX" id="c9b-H4-Tl6"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="trailing" secondItem="h8n-Uo-DKl" secondAttribute="trailing" id="e3f-c2-43Y"/>
+                            <constraint firstItem="fSC-9m-Y8d" firstAttribute="top" secondItem="cGL-HW-59C" secondAttribute="bottom" constant="145" id="eoB-0C-Vy0"/>
+                            <constraint firstItem="6f3-Hw-ILK" firstAttribute="firstBaseline" secondItem="kEf-op-Pan" secondAttribute="firstBaseline" id="fjm-34-Kuj"/>
+                            <constraint firstItem="KmN-RM-2gf" firstAttribute="top" secondItem="0a9-iw-h2o" secondAttribute="bottom" constant="25" id="fxe-Me-ASC"/>
+                            <constraint firstItem="6f3-Hw-ILK" firstAttribute="top" secondItem="F9O-g5-u0o" secondAttribute="top" constant="91" id="gHQ-Zt-wVh"/>
+                            <constraint firstItem="cGL-HW-59C" firstAttribute="leading" secondItem="F9O-g5-u0o" secondAttribute="leadingMargin" constant="92" id="gs8-RA-xDR"/>
+                            <constraint firstItem="cGL-HW-59C" firstAttribute="centerX" secondItem="Igc-Pr-9AJ" secondAttribute="centerX" id="hpX-4T-ESl"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="leading" secondItem="3bE-fc-6x9" secondAttribute="leading" id="iae-xn-xll"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="leading" secondItem="F9O-g5-u0o" secondAttribute="leadingMargin" id="jCF-gO-cSi"/>
+                            <constraint firstAttribute="bottom" secondItem="3bE-fc-6x9" secondAttribute="bottom" constant="329" id="mNP-WW-bcO"/>
+                            <constraint firstItem="3bE-fc-6x9" firstAttribute="top" secondItem="KmN-RM-2gf" secondAttribute="bottom" constant="8" id="mTw-4Y-IpO"/>
+                            <constraint firstItem="h8n-Uo-DKl" firstAttribute="leading" secondItem="6f3-Hw-ILK" secondAttribute="leading" id="mup-MS-NDU"/>
+                            <constraint firstItem="cGL-HW-59C" firstAttribute="centerX" secondItem="eag-nm-StA" secondAttribute="centerX" id="oM5-hl-EJa"/>
+                            <constraint firstItem="zdh-Eb-Bjf" firstAttribute="leading" secondItem="3bE-fc-6x9" secondAttribute="trailing" constant="8" symbolic="YES" id="qvm-Sg-GR6"/>
+                            <constraint firstItem="cGL-HW-59C" firstAttribute="centerX" secondItem="KmN-RM-2gf" secondAttribute="centerX" id="wha-jk-Agz"/>
+                            <constraint firstItem="cGL-HW-59C" firstAttribute="top" secondItem="Igc-Pr-9AJ" secondAttribute="bottom" constant="8" id="x3R-Op-Pbg"/>
+                            <constraint firstItem="Igc-Pr-9AJ" firstAttribute="leading" secondItem="KmN-RM-2gf" secondAttribute="leading" id="yZS-lv-HD3"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="eventName" destination="eag-nm-StA" id="uLM-pk-f8h"/>
@@ -585,54 +617,53 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aeD-S0-gI0">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aeD-S0-gI0">
                                             <rect key="frame" x="25" y="7" width="118" height="102"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zss-CC-kgh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="34"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zss-CC-kgh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESU-cg-PqD" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESU-cg-PqD" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30.333333333333336" height="34"/>
                                                             <connections>
                                                                 <action selector="eatOutPushed:" destination="PtZ-cp-hUf" eventType="touchUpInside" id="9fk-w9-Sff"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="eat out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvq-Bu-sY2">
-                                                            <rect key="frame" x="50.000000000000007" y="0.0" width="53.666666666666679" height="34"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eat out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvq-Bu-sY2">
+                                                            <rect key="frame" x="50.333333333333321" y="0.0" width="53.666666666666679" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qgX-8a-qzx">
-                                                    <rect key="frame" x="0.0" y="34" width="117.66666666666667" height="34"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qgX-8a-qzx">
+                                                    <rect key="frame" x="0.0" y="34" width="118" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xii-5O-7iN" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xii-5O-7iN" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30.333333333333336" height="34"/>
                                                             <connections>
                                                                 <action selector="hangOutPushed:" destination="PtZ-cp-hUf" eventType="touchUpInside" id="h0e-g7-lQh"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="hang out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-xr-GCT">
-                                                            <rect key="frame" x="50.000000000000007" y="0.0" width="67.666666666666686" height="34"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hang out" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCO-xr-GCT">
+                                                            <rect key="frame" x="50.333333333333321" y="0.0" width="67.666666666666686" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="47u-jo-NLJ">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="47u-jo-NLJ">
                                                     <rect key="frame" x="0.0" y="68" width="113" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boO-aT-xTY" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boO-aT-xTY" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                             <connections>
                                                                 <action selector="meetUpPushed:" destination="PtZ-cp-hUf" eventType="touchUpInside" id="MoU-Ql-6zm"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="meet up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nx7-Ld-876">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meet up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nx7-Ld-876">
                                                             <rect key="frame" x="50" y="0.0" width="63" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -641,8 +672,20 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="zss-CC-kgh" secondAttribute="trailing" constant="14.333333333333329" id="4ZR-Xa-0ND"/>
+                                                <constraint firstItem="gCO-xr-GCT" firstAttribute="top" secondItem="aeD-S0-gI0" secondAttribute="top" constant="34" id="I71-Tx-vM7"/>
+                                                <constraint firstItem="nx7-Ld-876" firstAttribute="top" secondItem="aeD-S0-gI0" secondAttribute="top" constant="68" id="QDd-qj-CHd"/>
+                                                <constraint firstAttribute="trailing" secondItem="nx7-Ld-876" secondAttribute="trailing" constant="5" id="Smp-15-fY9"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yvq-Bu-sY2" secondAttribute="trailing" constant="14" id="f1G-hb-qyi"/>
+                                                <constraint firstAttribute="trailing" secondItem="qgX-8a-qzx" secondAttribute="trailing" constant="0.3333333333333286" id="y1v-dz-gRb"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aeD-S0-gI0" firstAttribute="leading" secondItem="MQU-5Q-gci" secondAttribute="leadingMargin" constant="17" id="0Ts-sM-Ud2"/>
+                                        <constraint firstItem="aeD-S0-gI0" firstAttribute="top" secondItem="MQU-5Q-gci" secondAttribute="topMargin" constant="-1" id="uS8-Vn-oqi"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eatOutButton" destination="ESU-cg-PqD" id="jo7-Lj-n2S"/>
@@ -657,20 +700,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jea-Qf-bqd">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jea-Qf-bqd">
                                             <rect key="frame" x="25" y="7" width="134" height="136"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wBm-aS-4yX">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wBm-aS-4yX">
                                                     <rect key="frame" x="0.0" y="0.0" width="74.333333333333329" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTM-O2-cT1" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTM-O2-cT1" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                             <connections>
                                                                 <action selector="carPushed:" destination="b3e-u6-gTH" eventType="touchUpInside" id="12w-Fp-NgN"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZa-za-yl5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZa-za-yl5">
                                                             <rect key="frame" x="50" y="0.0" width="24.333333333333329" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -678,33 +720,33 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="obB-E3-be1">
-                                                    <rect key="frame" x="0.0" y="34" width="126.66666666666667" height="34"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="obB-E3-be1">
+                                                    <rect key="frame" x="0.0" y="34" width="126.66666666666666" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9v-TS-de7" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9v-TS-de7" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                             <connections>
                                                                 <action selector="frontDoorPushed:" destination="b3e-u6-gTH" eventType="touchUpInside" id="L4t-tJ-Xuf"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="front door" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yD-sE-ikQ">
-                                                            <rect key="frame" x="50.000000000000007" y="0.0" width="76.666666666666686" height="34"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="front door" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yD-sE-ikQ">
+                                                            <rect key="frame" x="50" y="0.0" width="76.666666666666657" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rG8-0E-lZ5">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rG8-0E-lZ5">
                                                     <rect key="frame" x="0.0" y="68" width="106" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-Lr-GiM" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-Lr-GiM" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                             <connections>
                                                                 <action selector="kitchenPushed:" destination="b3e-u6-gTH" eventType="touchUpInside" id="Vn0-mb-98G"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="kitchen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpe-on-i4v">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kitchen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpe-on-i4v">
                                                             <rect key="frame" x="50" y="0.0" width="56" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -712,16 +754,16 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3ui-7l-ddH">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3ui-7l-ddH">
                                                     <rect key="frame" x="0.0" y="102" width="134" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUo-cv-Zux" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUo-cv-Zux" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                             <connections>
                                                                 <action selector="livingRoomPushed:" destination="b3e-u6-gTH" eventType="touchUpInside" id="jtl-wP-cEX"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="living room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN2-5g-EBS">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="living room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DN2-5g-EBS">
                                                             <rect key="frame" x="50" y="0.0" width="84" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -730,8 +772,18 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="obB-E3-be1" firstAttribute="top" secondItem="jea-Qf-bqd" secondAttribute="top" constant="34" id="AHo-tk-buD"/>
+                                                <constraint firstItem="JZa-za-yl5" firstAttribute="top" secondItem="jea-Qf-bqd" secondAttribute="top" id="aTu-WT-mGQ"/>
+                                                <constraint firstItem="3ui-7l-ddH" firstAttribute="top" secondItem="jea-Qf-bqd" secondAttribute="top" constant="102" id="cjn-Z4-3mA"/>
+                                                <constraint firstItem="cpe-on-i4v" firstAttribute="top" secondItem="jea-Qf-bqd" secondAttribute="top" constant="68" id="q1F-kf-xBA"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jea-Qf-bqd" firstAttribute="leading" secondItem="QV2-9y-2yd" secondAttribute="leadingMargin" constant="17" id="dYw-D5-tll"/>
+                                        <constraint firstItem="jea-Qf-bqd" firstAttribute="top" secondItem="QV2-9y-2yd" secondAttribute="topMargin" constant="-1" id="zBt-gW-MTI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="carButton" destination="rTM-O2-cT1" id="hjc-us-T51"/>
@@ -747,37 +799,36 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-Rg-KNZ">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-Rg-KNZ">
                                             <rect key="frame" x="25" y="7" width="136" height="102"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OJ1-j7-YDe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="125.33333333333333" height="34"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OJ1-j7-YDe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="125.33333333333334" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLz-Uz-33h" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLz-Uz-33h" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                             <connections>
                                                                 <action selector="fiveMinutesPushed:" destination="reF-SR-QaX" eventType="touchUpInside" id="ltk-Dk-hnf"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="5 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj9-lc-M4I">
-                                                            <rect key="frame" x="49.999999999999993" y="0.0" width="75.333333333333314" height="34"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj9-lc-M4I">
+                                                            <rect key="frame" x="50" y="0.0" width="75.333333333333343" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U8N-gd-6es">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U8N-gd-6es">
                                                     <rect key="frame" x="0.0" y="34" width="133.33333333333334" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scD-mX-hWf" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scD-mX-hWf" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                             <connections>
                                                                 <action selector="tenMinutesPushed:" destination="reF-SR-QaX" eventType="touchUpInside" id="dtt-lY-1e9"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="10 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5p-RC-Eg5">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5p-RC-Eg5">
                                                             <rect key="frame" x="50" y="0.0" width="83.333333333333343" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -785,16 +836,16 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nkg-P2-4e8">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nkg-P2-4e8">
                                                     <rect key="frame" x="0.0" y="68" width="136" height="34"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS0-Y9-qE0" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS0-Y9-qE0" customClass="RadioButton" customModule="Are_You_Ready_" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="34"/>
                                                             <connections>
                                                                 <action selector="thirtyMinutesPushed:" destination="reF-SR-QaX" eventType="touchUpInside" id="KBl-dM-wGr"/>
                                                             </connections>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="30 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qK-Uf-e4K">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qK-Uf-e4K">
                                                             <rect key="frame" x="50" y="0.0" width="86" height="34"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -803,8 +854,20 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="n5p-RC-Eg5" firstAttribute="top" secondItem="byQ-Rg-KNZ" secondAttribute="top" constant="34" id="3lk-jq-BEZ"/>
+                                                <constraint firstItem="Nkg-P2-4e8" firstAttribute="top" secondItem="byQ-Rg-KNZ" secondAttribute="top" constant="68" id="T7J-G6-uNW"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hj9-lc-M4I" secondAttribute="trailing" constant="10.666666666666686" id="XgZ-4M-aAE"/>
+                                                <constraint firstItem="Hj9-lc-M4I" firstAttribute="top" secondItem="byQ-Rg-KNZ" secondAttribute="top" id="iKn-1K-AZr"/>
+                                                <constraint firstAttribute="trailing" secondItem="n5p-RC-Eg5" secondAttribute="trailing" constant="2.6666666666666572" id="jeb-QK-QWd"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nkg-P2-4e8" secondAttribute="trailing" id="tRY-yx-0cJ"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="byQ-Rg-KNZ" firstAttribute="leading" secondItem="tBZ-yk-OiF" secondAttribute="leadingMargin" constant="17" id="Wke-aH-PPY"/>
+                                        <constraint firstItem="byQ-Rg-KNZ" firstAttribute="centerY" secondItem="tBZ-yk-OiF" secondAttribute="centerY" id="l5F-Lm-gPO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="fiveMinuteButton" destination="dLz-Uz-33h" id="wFX-Hl-Qyc"/>

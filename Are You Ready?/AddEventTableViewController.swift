@@ -20,44 +20,44 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
     var locationText = ""
     var whatsUpText = ""
     var meetUpDate = Date()
-
+    
     func titleEntered2(title: String) {
         titleText = title
     }
-
+    
     func locationEntered2(location: String) {
         locationText = location
     }
-
+    
     func meetUpDateEntered(meetUpDate: Date) {
         self.meetUpDate = meetUpDate
     }
-
+    
     func meetUpButtonTapped(index:Int) {
         meetUpTypeSelectionIndex = index
     }
-
+    
     func meetSpotButtonTapped(index:Int) {
         meetUpSpotSelectionIndex = index
     }
-
+    
     func readyTimeButtonTapped(index:Int) {
         readyTimeSelectionIndex = index
     }
-
+    
     func whatsUpTextEntered(whatsUpText:String) {
         self.whatsUpText = whatsUpText
     }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
+    
     @IBAction func addButtonPushed(_ sender: Any) {
         let eventTitle = titleText
         let eventLocation = locationText
         let eventDate: Date = meetUpDate
-
+        
         var eventType: EventType
         switch meetUpTypeSelectionIndex {
         case 0: eventType = .eatOut
@@ -67,7 +67,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             print("You shouldn't be here")
             eventType = .eatOut
         }
-
+        
         var meetUpLocation: EventMeetupLocation
         switch meetUpSpotSelectionIndex {
         case 0: meetUpLocation = .car
@@ -78,9 +78,9 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             print("You shouldn't be here")
             meetUpLocation = .car
         }
-
+        
         let description = whatsUpText
-
+        
         var readyMinutes: Int
         switch readyTimeSelectionIndex {
         case 0: readyMinutes = 5
@@ -90,10 +90,10 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             print("You shouldn't be here")
             readyMinutes = 5
         }
-
+        
         let calendar = Calendar.current
         let readyTime = calendar.date(byAdding: .second, value: (readyMinutes * -1 * 60), to: eventDate)
-
+        
         let event = AYREvent(
             name: eventTitle,
             type: eventType,
@@ -106,7 +106,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             readyTime: eventDate,
             attendees: [:]     // This value will also be auto-populated by the server
         )
-
+        
         AreYouReadyAPI.createEvent(event, inGroup: "cis55") { result in
             switch (result) {
             case let .success(group):
@@ -115,7 +115,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
                     // direct back to main page after adding event
                     self.dismiss(animated: true, completion: nil)
                 }
-
+                
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
@@ -125,19 +125,19 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
                     let alertController = UIAlertController(title: "Failed to write event", message:
                         reason, preferredStyle: UIAlertControllerStyle.alert)
                     alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-
+                    
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //see if we can read the core data
@@ -159,25 +159,25 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
                 print(error)
             }
         }
-
+        
     }
-
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 6
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) ->String? {
         switch section {
         case 0:
@@ -197,9 +197,9 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             return "Event Identification"
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellId1", for: indexPath) as! Cell1TableViewCell
@@ -232,20 +232,20 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             return cell
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         var returnValue = 0.0
-
+        
         switch indexPath.section {
-            case 1: returnValue = 120.0
-            case 2: returnValue = 120.0
-            case 3: returnValue = 150.0
-            case 4: returnValue = 120.0
-            case 5: returnValue = 150.0
-            default: returnValue = 80.0
+        case 1: returnValue = 120.0
+        case 2: returnValue = 120.0
+        case 3: returnValue = 150.0
+        case 4: returnValue = 120.0
+        case 5: returnValue = 150.0
+        default: returnValue = 80.0
         }
         return CGFloat(returnValue)
     }
-
+    
 }

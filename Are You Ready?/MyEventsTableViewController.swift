@@ -1,5 +1,6 @@
 import UIKit
 
+
 class MyEventsTableViewController: UITableViewController {
 
     var myToRespondEvents = [AYREvent]()
@@ -31,7 +32,10 @@ class MyEventsTableViewController: UITableViewController {
                         self.myGetReadyEvents += [event.value]
                     }
                 }
-
+                
+                self.myToRespondEvents.sort(by: { $0.readyTime.compare($1.readyTime) == ComparisonResult.orderedAscending })
+                self.myGetReadyEvents.sort(by: { $0.readyTime.compare($1.readyTime) == ComparisonResult.orderedAscending })
+                
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
@@ -53,7 +57,8 @@ class MyEventsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        formatter.dateStyle = .none
+        
+        formatter.dateStyle = .medium
         formatter.timeStyle = .short
 
         self.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: UIControlEvents.valueChanged)
