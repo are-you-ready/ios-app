@@ -24,9 +24,8 @@ class MyToRespondEventsDetailViewController: UIViewController {
                 print(group.name)
                 let notificationTime = group.events[self.myEvent!.name]?.notificationTime
                 let diff = notificationTime!.timeIntervalSince(Date())
+                //#sage: check num to confirm non-negative
                 print(diff)
-                
-                
                 self.setNotification(time: diff)
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
@@ -49,11 +48,11 @@ class MyToRespondEventsDetailViewController: UIViewController {
         
         content.sound = UNNotificationSound.default()
         
-        // Deliver the notification in five seconds.
+        //#sage: time interval = time of date minus time of notification in seconds
         let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: time, repeats: false)
-        let request = UNNotificationRequest.init(identifier: "FiveSecond", content: content, trigger: trigger)
+        let request = UNNotificationRequest.init(identifier: "test_name", content: content, trigger: trigger)
         
-        // Schedule the notification.
+        //#sage: add notification to stack
         let center = UNUserNotificationCenter.current()
         center.add(request) { (error) in
             if let error = error {
@@ -78,11 +77,7 @@ class MyToRespondEventsDetailViewController: UIViewController {
         shortFormatter.dateStyle = .none
         shortFormatter.timeStyle = .short
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
         //see if we can read the core data
         var fetchResultsController: NSFetchedResultsController<Login>!
         let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
