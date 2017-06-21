@@ -73,7 +73,7 @@ class MyToRespondEventsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mediumFormatter.dateStyle = .medium
-        mediumFormatter.timeStyle = .medium
+        mediumFormatter.timeStyle = .short
         shortFormatter.dateStyle = .none
         shortFormatter.timeStyle = .short
 
