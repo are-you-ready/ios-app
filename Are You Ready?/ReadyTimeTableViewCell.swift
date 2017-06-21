@@ -28,7 +28,7 @@ class ReadyTimeTableViewCell: UITableViewCell {
     }
 
     @IBAction func fiveMinutesPushed(_ sender: RadioButton) {
-        sender.isSelected = !sender.isSelected
+        sender.isSelected = true
         if sender.isSelected {
             delegate?.readyTimeButtonTapped(index: 0)
             tenMinutesButton.isSelected = false
@@ -37,7 +37,7 @@ class ReadyTimeTableViewCell: UITableViewCell {
     }
     
     @IBAction func tenMinutesPushed(_ sender: RadioButton) {
-        sender.isSelected = !sender.isSelected
+        sender.isSelected = true
         if sender.isSelected {
             delegate?.readyTimeButtonTapped(index: 1)
             fiveMinuteButton.isSelected = false
@@ -46,7 +46,7 @@ class ReadyTimeTableViewCell: UITableViewCell {
     }
     
     @IBAction func thirtyMinutesPushed(_ sender: RadioButton) {
-        sender.isSelected = !sender.isSelected
+        sender.isSelected = true
         if sender.isSelected {
             delegate?.readyTimeButtonTapped(index: 2)
             tenMinutesButton.isSelected = false

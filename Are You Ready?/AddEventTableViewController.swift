@@ -27,9 +27,9 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
     @IBOutlet weak var backUIBarButton: UIBarButtonItem!
     @IBOutlet weak var addUIBarButton: UIBarButtonItem!
     var user = ""
-    var meetUpTypeSelectionIndex = 0
-    var meetUpSpotSelectionIndex = 0
-    var readyTimeSelectionIndex = 0
+    var meetUpTypeSelectionIndex = -1
+    var meetUpSpotSelectionIndex = -1
+    var readyTimeSelectionIndex = -1
     var titleText = ""
     var locationText = ""
     var whatsUpText = ""
@@ -101,12 +101,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
         default:
             readyMinutes = nil
         }
-        
-        
-        
-        
 
-        
         if (eventTitle) == "" {
             let alertController = UIAlertController(title: "Failed to Write Event", message:
                 "No Title Entered", preferredStyle: UIAlertControllerStyle.alert)
@@ -124,18 +119,31 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             return
         }
         let calendar = Calendar.current
-        let readyTime = calendar.date(byAdding: .second, value: (readyMinutes! * -1 * 60), to: eventDate)
         
-        if (readyTime) == nil {
-            
+        let var_1 = eventDate
+        let secondsLeft = var_1.timeIntervalSince(Date())
+        if (secondsLeft <= 0){
             let alertController = UIAlertController(title: "Failed to Write Event", message:
-                "Event Time not Valid", preferredStyle: UIAlertControllerStyle.alert)
+                "Event Time Not Valid", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
             return
 
         }
+        
+        
+        if (readyMinutes) == nil {
+            
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "Event Ready Time not Valid", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+
+        }
+        let readyTime = calendar.date(byAdding: .second, value: (readyMinutes! * -1 * 60), to: eventDate)
         if (eventType) == nil {
             
             let alertController = UIAlertController(title: "Failed to Write Event", message:
@@ -162,6 +170,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             self.present(alertController, animated: true, completion: nil)
             return
         }
+        
 
         let event = AYREvent(
             name: eventTitle,
@@ -175,7 +184,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             readyTime: eventDate,
             attendees: [:]     // This value will also be auto-populated by the server
         )
-        
+
         AreYouReadyAPI.createEvent(event, inGroup: "cis55") { result in
             switch (result) {
             case let .success(group):
