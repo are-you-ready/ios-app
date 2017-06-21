@@ -16,7 +16,7 @@ public class RadioButton: UIButton {
     internal var innerCircleLayer = CAShapeLayer()
     
     
-    @IBInspectable public var outerCircleColor: UIColor = UIColor.blue {
+    @IBInspectable public var outerCircleColor: UIColor = #colorLiteral(red: 0.07058823529, green: 0.2352941176, blue: 0.5215686275, alpha: 1) {
         didSet {
             outerCircleLayer.strokeColor = outerCircleColor.cgColor
         }
