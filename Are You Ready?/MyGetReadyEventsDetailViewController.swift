@@ -77,7 +77,8 @@ class MyGetReadyEventsDetailViewController: UIViewController {
     }
     
     func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(MyGetReadyEventsDetailViewController.updateTimer)), userInfo: nil, repeats: true)
+        updateTimer()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(MyGetReadyEventsDetailViewController.updateTimer)), userInfo: nil, repeats: true)
     }
     
     /*

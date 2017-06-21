@@ -26,7 +26,7 @@ enum APIResult<Type> {
 let BASE_API_URL = URL(string: "http://ayr.pf-n.co")!
 // You can also hardcode the GROUP_NAME and USER_NAME here to use in all API calls. Please do not commit them as anything other than `nil`.
 let GROUP_NAME: String? = nil
-let USER_NAME: String? = "Scott"
+let USER_NAME: String? = nil
 
 let session = URLSession.shared
 
