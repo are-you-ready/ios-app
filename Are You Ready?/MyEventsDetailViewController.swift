@@ -29,6 +29,9 @@ class MyEventsDetailViewController: UIViewController {
             case let .success(group):
                 print(group.name)
                 let notificationTime = group.events[self.myEvent!.name]?.notificationTime
+                //#sage: need to somehow set the permission window in begginning of app
+                
+                
                 //#sage: double check this thing to make sure it aint no neg num
                 let diff = notificationTime!.timeIntervalSince(Date())
                 print(diff)
