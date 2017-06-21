@@ -30,6 +30,12 @@ class MyToRespondEventsDetailViewController: UIViewController {
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
                 print("#updateStatus failure: \(reason)")
+                DispatchQueue.main.async {
+                    let alertController = UIAlertController(title: "Failed to get group", message:
+                        reason, preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
         }
     }
