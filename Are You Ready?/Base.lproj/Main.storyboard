@@ -91,17 +91,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzg-t1-SBn">
+                                <rect key="frame" x="59" y="118" width="297" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="eventName" destination="b3q-dq-kYG" id="dMA-cu-jAB"/>
+                        <outlet property="timer_label" destination="mzg-t1-SBn" id="6Xw-7n-zTw"/>
                         <outlet property="whosReady" destination="Eeh-lx-XSf" id="mF3-ed-B9d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cu-fG-mQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2688" y="456"/>
+            <point key="canvasLocation" x="2686.9565217391305" y="455.70652173913049"/>
         </scene>
         <!--My Group Table View Controller-->
         <scene sceneID="6PA-bk-5AB">
