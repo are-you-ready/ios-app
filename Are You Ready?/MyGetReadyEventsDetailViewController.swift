@@ -47,12 +47,11 @@ class MyGetReadyEventsDetailViewController: UIViewController {
         }
         whosReady.text = whosReadyText
         
-        let notificationTime = myEvent!.readyTime
-        seconds_left = notificationTime.timeIntervalSince(Date())
+        let readyTime = myEvent!.readyTime
+        seconds_left = readyTime.timeIntervalSince(Date())
         if (seconds_left >= 0) {
             runTimer()
         }
-
     }
 
     override func didReceiveMemoryWarning() {
