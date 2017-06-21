@@ -12,7 +12,7 @@ import CoreData
 class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate, MeetSpotCellDelegate, ReadyTimeCellDelegate, IdCellDelegate, WhatsUpCellDelegate, MeetUpDateCellDelegate {
     @IBOutlet weak var backUIBarButton: UIBarButtonItem!
     @IBOutlet weak var addUIBarButton: UIBarButtonItem!
-    var user:String = ""
+    var user = ""
     var meetUpTypeSelectionIndex = 0
     var meetUpSpotSelectionIndex = 0
     var readyTimeSelectionIndex = 0
@@ -20,7 +20,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
     var locationText = ""
     var whatsUpText = ""
     var meetUpDate = Date()
-    
+
     func titleEntered2(title: String) {
         titleText = title
     }
@@ -28,87 +28,71 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
     func locationEntered2(location: String) {
         locationText = location
     }
-    
+
     func meetUpDateEntered(meetUpDate: Date) {
         self.meetUpDate = meetUpDate
     }
-    
+
     func meetUpButtonTapped(index:Int) {
         meetUpTypeSelectionIndex = index
     }
-    
+
     func meetSpotButtonTapped(index:Int) {
         meetUpSpotSelectionIndex = index
     }
-    
+
     func readyTimeButtonTapped(index:Int) {
         readyTimeSelectionIndex = index
     }
-    
+
     func whatsUpTextEntered(whatsUpText:String) {
         self.whatsUpText = whatsUpText
     }
 
-    
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     @IBAction func addButtonPushed(_ sender: Any) {
         let eventTitle = titleText
         let eventLocation = locationText
         let eventDate: Date = meetUpDate
-        var eventType = EventType.eatOut
-        if meetUpTypeSelectionIndex == 1 {
-            eventType = EventType.hangOut
-        }
-        else {
-            if meetUpTypeSelectionIndex == 2 {
-                eventType = EventType.meetUp
-            }
+
+        var eventType: EventType
+        switch meetUpTypeSelectionIndex {
+        case 0: eventType = .eatOut
+        case 1: eventType = .hangOut
+        case 2: eventType = .meetUp
+        default:
+            print("You shouldn't be here")
+            eventType = .eatOut
         }
 
-        
-        var meetUpLocation = EventMeetupLocation.car
-        if meetUpSpotSelectionIndex == 1 {
-            meetUpLocation = .frontDoor
+        var meetUpLocation: EventMeetupLocation
+        switch meetUpSpotSelectionIndex {
+        case 0: meetUpLocation = .car
+        case 1: meetUpLocation = .frontDoor
+        case 2: meetUpLocation = .kitchen
+        case 3: meetUpLocation = .livingRoom
+        default:
+            print("You shouldn't be here")
+            meetUpLocation = .car
         }
-        else if meetUpSpotSelectionIndex == 2 {
-            meetUpLocation = .kitchen
-        }
-        else if meetUpSpotSelectionIndex == 3 {
-            meetUpLocation = .livingRoom
-        }
-        
+
         let description = whatsUpText
-        
-        var readyMinutes = 5
-        if readyTimeSelectionIndex == 1 {
-            readyMinutes = 10
+
+        var readyMinutes: Int
+        switch readyTimeSelectionIndex {
+        case 0: readyMinutes = 5
+        case 1: readyMinutes = 10
+        case 2: readyMinutes = 30
+        default:
+            print("You shouldn't be here")
+            readyMinutes = 5
         }
-        else {
-            if readyTimeSelectionIndex == 2 {
-                readyMinutes = 30
-            }
-        }
-        
+
         let calendar = Calendar.current
         let readyTime = calendar.date(byAdding: .second, value: (readyMinutes * -1 * 60), to: eventDate)
-        
-        /*
-        let event = AYREvent(
-            name: "Awesome Event",
-            type: .eatOut,
-            description: "Let's go do stuff",
-            location: "Somewhere far, far away",
-            meetupLocation: .car,
-            createdBy: AYRUser(name: "Markus"),
-            createdAt: Date(), // This value will be replaced by the server anyway
-            notificationTime: Date(timeIntervalSinceNow: 300),
-            readyTime: Date(timeIntervalSinceNow: 600),
-            attendees: [:]     // This value will also be auto-populated by the server
-        )
-        */
 
         let event = AYREvent(
             name: eventTitle,
@@ -122,7 +106,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             readyTime: eventDate,
             attendees: [:]     // This value will also be auto-populated by the server
         )
-        
+
         AreYouReadyAPI.createEvent(event, inGroup: "cis55") { result in
             switch (result) {
             case let .success(group):
@@ -131,22 +115,23 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
                     // direct back to main page after adding event
                     self.dismiss(animated: true, completion: nil)
                 }
+
             case let .failure(.requestFailure(reason, _)),
                  let .failure(.JSONParseFailure(reason)),
                  let .failure(.JSONErrorResponse(reason, _)):
                 print("Request failed because: \(reason)")
                 DispatchQueue.main.async {
                     //failed to write, issue alert
-                    let alertController = UIAlertController(title: "Failed to Write Event", message:
+                    let alertController = UIAlertController(title: "Failed to write event", message:
                         reason, preferredStyle: UIAlertControllerStyle.alert)
                     alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-                    
+
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -176,30 +161,27 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
         }
 
     }
-    
+
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 6
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) ->String? {
         switch section {
+        case 0:
+            return "Event Identification"
         case 1:
             return "Choose Event Time"
         case 2:
@@ -211,13 +193,18 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
         case 5:
             return "Tell 'em What's Up"
         default:
+            print("You shouldn't be here")
             return "Event Identification"
         }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CellId1", for: indexPath) as! Cell1TableViewCell
+            cell.delegate = self
+            return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellId2", for: indexPath) as! MeetUpDateTableViewCell
             cell.delegate = self
@@ -239,16 +226,17 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             cell.delegate = self
             return cell
         default:
+            print("You shouldn't be here")
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellId1", for: indexPath) as! Cell1TableViewCell
             cell.delegate = self
             return cell
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         var returnValue = 0.0
-        
+
         switch indexPath.section {
             case 1: returnValue = 120.0
             case 2: returnValue = 120.0
@@ -259,56 +247,5 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
         }
         return CGFloat(returnValue)
     }
-
-    /*
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return ["section 1", "section 2"]
-    }
-     */
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

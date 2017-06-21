@@ -13,7 +13,7 @@ enum APIError: Error {
     case requestFailure(String, Int?)
     /// (reason) Received a response, but it was not JSON or was not of an expected JSON structure
     case JSONParseFailure(String)
-    /// (reason, errorCode) API responded successfully with an error (e.g. "User not found")
+    /// (reason, errorCode) API responded successfully with an error (e.g. "Group not found")
     case JSONErrorResponse(String, Int?)
 }
 
