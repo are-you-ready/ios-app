@@ -119,7 +119,7 @@ public class RadioButton: UIButton {
             innerCircleLayer.fillColor = UIColor.clear.cgColor
         }
     }
-    // Overriden methods.
+    //#Shannon: Overriden methods.
     override public func prepareForInterfaceBuilder() {
         customInitialization()
     }

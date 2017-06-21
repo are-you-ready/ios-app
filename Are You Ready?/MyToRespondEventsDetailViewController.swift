@@ -78,12 +78,12 @@ class MyToRespondEventsDetailViewController: UIViewController {
         shortFormatter.timeStyle = .short
 
 
-        //see if we can read the core data
+        //#Markus: see if we can read the core data
         var fetchResultsController: NSFetchedResultsController<Login>!
         let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
         //let sortDescriptor = NSSortDescriptor(key: "iItem", ascending: true)
         fetchRequest.sortDescriptors = []
-        //let defaultReturn: [LoginId] = []
+        //#Markus: let defaultReturn: [LoginId] = []
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
             let context = appDelegate.persistentContainer.viewContext
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -98,7 +98,7 @@ class MyToRespondEventsDetailViewController: UIViewController {
             }
         }
         
-        // Do any additional setup after loading the view.
+        //#Markus:  Do any additional setup after loading the view.
         eventName.text = myEvent?.name
         location.text = myEvent?.location
         time.text = mediumFormatter.string(from: myEvent!.readyTime)
@@ -125,10 +125,4 @@ class MyToRespondEventsDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-
 }

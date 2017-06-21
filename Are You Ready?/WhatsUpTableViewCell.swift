@@ -21,16 +21,13 @@ class WhatsUpTableViewCell: UITableViewCell, UITextViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         whatsUpTextView!.delegate = self as UITextViewDelegate
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
-    func textViewDidChange(_ textView: UITextView) { //Handle the text changes here
+    func textViewDidChange(_ textView: UITextView) { //#Markus: Handle the text changes here
         delegate?.whatsUpTextEntered(whatsUpText: textView.text)
     }
 

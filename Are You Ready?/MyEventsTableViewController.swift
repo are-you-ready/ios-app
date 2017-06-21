@@ -66,7 +66,7 @@ class MyEventsTableViewController: UITableViewController {
         case 1:
             return myGetReadyEvents.count
         default:
-            print("You shouldn't be here")
+            print("This Shouldn't Exist")
             return 0
         }
     }
@@ -107,7 +107,7 @@ class MyEventsTableViewController: UITableViewController {
         case 1:
             return "Are you ready?"
         default:
-            print("You shouldn't be here")
+            print("This Shouldn't Exist")
             return nil
         }
     }

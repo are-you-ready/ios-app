@@ -29,7 +29,7 @@ class MeetUpTypeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-        //eatOutSelected = eatOutButton.getValue(forKey: "isSelected")
+        // eatOutSelected = eatOutButton.getValue(forKey: "isSelected")
     }
 
     @IBAction func eatOutPushed(_ sender: RadioButton) {
