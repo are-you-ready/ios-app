@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="-720" y="955"/>
         </scene>
-        <!--My Get Ready Events Detail View-->
+        <!--My Get Ready Events Detail View Controller-->
         <scene sceneID="iij-x6-kwN">
             <objects>
-                <viewController id="AmO-7p-ckd" customClass="MyGetReadyEventsDetailView" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AmO-7p-ckd" customClass="MyGetReadyEventsDetailViewController" customModule="Are_You_Ready_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KBU-Cz-vsW"/>
                         <viewControllerLayoutGuide type="bottom" id="DmH-8E-BB7"/>
@@ -242,7 +242,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyEventsCell" rowHeight="100" id="y1y-n3-z3p" customClass="MyToRespondEventsTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyToRespondEventsCell" rowHeight="100" id="y1y-n3-z3p" customClass="MyToRespondEventsTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y1y-n3-z3p" id="0iM-yI-DFa">
@@ -276,10 +276,10 @@
                                     <outlet property="cellEventLocation" destination="tUF-0C-iDw" id="0rD-O4-vib"/>
                                     <outlet property="cellEventName" destination="Ivc-HB-UwD" id="cm0-jR-RrI"/>
                                     <outlet property="cellEventTime" destination="Pvb-cj-Rj5" id="4Wu-ZX-D0p"/>
-                                    <segue destination="xRd-yv-zOs" kind="show" identifier="MyEventsDetailSegue" id="LSm-91-kuT"/>
+                                    <segue destination="xRd-yv-zOs" kind="show" identifier="MyToRespondEventsDetailSegue" id="LSm-91-kuT"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGetReadyEventCell" rowHeight="100" id="gRa-e3-dJS" customClass="MyGetReadyEventsTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGetReadyEventsCell" rowHeight="100" id="gRa-e3-dJS" customClass="MyGetReadyEventsTableViewCell" customModule="Are_You_Ready_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="128" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRa-e3-dJS" id="kbx-5T-uW0">
@@ -313,7 +313,7 @@
                                     <outlet property="cellEventLocation" destination="PR6-7G-fqG" id="jhj-om-hSi"/>
                                     <outlet property="cellEventName" destination="ZIl-eA-nEB" id="cGS-S5-MnW"/>
                                     <outlet property="cellEventTime" destination="UZF-Xd-W84" id="UbK-dH-gku"/>
-                                    <segue destination="AmO-7p-ckd" kind="show" identifier="MyToGetReadyEventsDetailSegue" id="qLC-Yf-4OB"/>
+                                    <segue destination="AmO-7p-ckd" kind="show" identifier="MyGetReadyEventsDetailSegue" id="qLC-Yf-4OB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

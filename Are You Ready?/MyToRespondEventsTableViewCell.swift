@@ -1,11 +1,3 @@
-//
-//  MyEventsTableViewCell.swift
-//  Are You Ready?
-//
-//  Created by Markus Tran on 6/18/17.
-//  Copyright © 2017 Markus Tran. All rights reserved.
-//
-
 import UIKit
 
 class MyToRespondEventsTableViewCell: UITableViewCell {

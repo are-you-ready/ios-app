@@ -1,12 +1,5 @@
-//
-//  MyEventsDetailViewController.swift
-//  Are You Ready?
-//
-//  Created by Markus Tran on 6/19/17.
-//  Copyright © 2017 Markus Tran. All rights reserved.
-//
-
 import UIKit
+import CoreData
 import UserNotifications
 
 class MyToRespondEventsDetailViewController: UIViewController {
@@ -14,6 +7,7 @@ class MyToRespondEventsDetailViewController: UIViewController {
     var myEvent: AYREvent? = nil
     var mediumFormatter = DateFormatter()
     var shortFormatter = DateFormatter()
+    var user = ""
     
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var location: UILabel!
@@ -24,7 +18,7 @@ class MyToRespondEventsDetailViewController: UIViewController {
     @IBOutlet weak var whosComing: UITextView!
 
     @IBAction func pressComing(_ sender: Any) {
-        AreYouReadyAPI.updateStatus(group: "cis55", event: myEvent!.name, user: "Scott", status: .coming) { result in
+        AreYouReadyAPI.updateStatus(group: "cis55", event: myEvent!.name, user: user, status: .coming) { result in
             switch (result) {
             case let .success(group):
                 print(group.name)
@@ -84,6 +78,31 @@ class MyToRespondEventsDetailViewController: UIViewController {
         shortFormatter.dateStyle = .none
         shortFormatter.timeStyle = .short
 
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //see if we can read the core data
+        var fetchResultsController: NSFetchedResultsController<Login>!
+        let fetchRequest: NSFetchRequest<Login> = Login.fetchRequest()
+        //let sortDescriptor = NSSortDescriptor(key: "iItem", ascending: true)
+        fetchRequest.sortDescriptors = []
+        //let defaultReturn: [LoginId] = []
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            //fetchResultsController.delegate = self as! NSFetchedResultsControllerDelegate
+            do{
+                try fetchResultsController.performFetch()
+                if let fetchedObjects = fetchResultsController.fetchedObjects{
+                    user = fetchedObjects[0].id!
+                }
+            } catch {
+                print(error)
+            }
+        }
+        
         // Do any additional setup after loading the view.
         eventName.text = myEvent?.name
         location.text = myEvent?.location

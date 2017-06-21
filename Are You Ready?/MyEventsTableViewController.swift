@@ -3,14 +3,14 @@ import UIKit
 class MyEventsTableViewController: UITableViewController {
 
     var myToRespondEvents = [AYREvent]()
-    var myToGetReadyEvents = [AYREvent]()
+    var myGetReadyEvents = [AYREvent]()
 
     var formatter = DateFormatter()
 
     func handleRefresh() {
         AreYouReadyAPI.getGroup("cis55") { result in
             self.myToRespondEvents = []
-            self.myToGetReadyEvents = []
+            self.myGetReadyEvents = []
 
             switch (result) {
             case let .success(group):
@@ -26,7 +26,7 @@ class MyEventsTableViewController: UITableViewController {
                     if hasNotResponded == true {
                         self.myToRespondEvents += [event.value]
                     } else {
-                        self.myToGetReadyEvents += [event.value]
+                        self.myGetReadyEvents += [event.value]
                     }
                 }
 
@@ -64,7 +64,7 @@ class MyEventsTableViewController: UITableViewController {
         case 0:
             return myToRespondEvents.count
         case 1:
-            return myToGetReadyEvents.count
+            return myGetReadyEvents.count
         default:
             print("You shouldn't be here")
             return 0
@@ -74,7 +74,7 @@ class MyEventsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyEventsCell", for: indexPath) as! MyToRespondEventsTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyToRespondEventsCell", for: indexPath) as! MyToRespondEventsTableViewCell
             let event = myToRespondEvents[indexPath.row]
 
             cell.cellEventName.text = event.name
@@ -84,8 +84,8 @@ class MyEventsTableViewController: UITableViewController {
             return cell
 
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MyGetReadyEventCell", for: indexPath) as! MyGetReadyEventsTableViewCell
-            let event = myToGetReadyEvents[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MyGetReadyEventsCell", for: indexPath) as! MyGetReadyEventsTableViewCell
+            let event = myGetReadyEvents[indexPath.row]
 
             cell.cellEventName.text = event.name
             cell.cellEventTime.text = formatter.string(from: event.readyTime)
@@ -114,15 +114,15 @@ class MyEventsTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
-        case "MyEventsDetailSegue":
+        case "MyToRespondEventsDetailSegue":
             let viewController = segue.destination as! MyToRespondEventsDetailViewController
             let cell = sender as! MyToRespondEventsTableViewCell
             viewController.myEvent = myToRespondEvents[self.tableView.indexPath(for: cell)!.row]
 
-        case "MyToGetReadyEventsDetailSegue":
+        case "MyGetReadyEventsDetailSegue":
             let viewController = segue.destination as! MyGetReadyEventsDetailViewController
             let cell = sender as! MyGetReadyEventsTableViewCell
-            viewController.myEvent = myToGetReadyEvents[self.tableView.indexPath(for: cell)!.row]
+            viewController.myEvent = myGetReadyEvents[self.tableView.indexPath(for: cell)!.row]
 
         default:
             print("You shouldn't be here")

@@ -1,11 +1,3 @@
-//
-//  GroupTableViewController.swift
-//  Are You Ready?
-//
-//  Created by Scott Willey on 6/14/17.
-//  Copyright © 2017 Markus Tran. All rights reserved.
-//
-
 import UIKit
 
 class MyGroupTableViewController: UITableViewController {
