@@ -55,7 +55,7 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
     }
     
     @IBAction func addButtonPushed(_ sender: Any) {
-        let eventTitle = titleText
+        var eventTitle = titleText
         let eventLocation = locationText
         let eventDate: Date = meetUpDate
         var eventType = EventType.eatOut
@@ -109,7 +109,51 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             attendees: [:]     // This value will also be auto-populated by the server
         )
         */
-
+        
+//        eventTitle = eventTitle.trimmingCharacters(in: .whitespaces)
+        
+        if (eventTitle) == "" {
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "No Title Entered", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        if (eventType) == "" {
+            
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "No Type Entered", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        if (description) == "" {
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "No Description Entered", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        if (eventLocation) == "" {
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "No Location Selected", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        if (meetUpLocation) == nil {
+            let alertController = UIAlertController(title: "Failed to Write Event", message:
+                "No Meetup Location Selected", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+    
         let event = AYREvent(
             name: eventTitle,
             type: eventType,
@@ -122,6 +166,8 @@ class AddEventTableViewController: UITableViewController, MeetUpTypeCellDelegate
             readyTime: eventDate,
             attendees: [:]     // This value will also be auto-populated by the server
         )
+
+        print(event.name)
         
         AreYouReadyAPI.createEvent(event, inGroup: "cis55") { result in
             switch (result) {
